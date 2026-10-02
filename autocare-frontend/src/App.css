@@ -1,0 +1,9052 @@
+/* ========================================
+   BMW M THEME COLORS
+======================================== */
+
+/*
+   BMW M LIGHT BLUE  : #00A3E0
+   BMW M DARK BLUE   : #0066B3
+   BMW M RED         : #E7222E
+   BLACK             : #030303
+   DARK SURFACE      : #080808
+   WHITE             : #FFFFFF
+*/
+
+
+/* ========================================
+   GLOBAL
+======================================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+
+  background: #030303;
+
+  color: #ffffff;
+
+  font-family:
+    "Inter",
+    "Segoe UI",
+    Arial,
+    sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+/* ========================================
+   NAVBAR
+======================================== */
+
+/* ========================================
+   NAVBAR - AUTOCARE THEME
+======================================== */
+
+.navbar {
+  background: #080808 !important;
+  border-bottom: 1px solid #151515;
+  min-height: 78px;
+  padding: 0 !important;
+}
+
+/* Main navbar container */
+
+.navbar .container {
+  max-width: 1280px;
+  height: 78px;
+  display: flex;
+  align-items: center;
+}
+
+/* ========================================
+   BRAND
+======================================== */
+
+.navbar-brand {
+  display: flex !important;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none !important;
+  margin-right: 50px;
+  padding: 0 !important;
+}
+
+/* Car icon */
+
+.navbar-brand .brand-icon {
+ width: 58px;
+  height: 58px;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.autocare-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.navbar-brand .brand-icon i {
+  color: #ffffff;
+  font-size: 25px;
+}
+
+/* Brand text */
+
+.navbar-brand > div:last-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.navbar-brand h2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.navbar-brand span {
+  margin-top: 5px;
+  color: #777777;
+  font-size: 12px;
+  line-height: 1;
+}
+
+/* ========================================
+   HIDE USER NAME FROM NAVBAR BRAND
+======================================== */
+
+/* If "Pratham" is being shown below AutoCare,
+   this prevents extra text from making the
+   brand area too tall. */
+
+.navbar-brand .user-name {
+  display: none !important;
+}
+
+/* ========================================
+   NAVIGATION LINKS
+======================================== */
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 38px;
+  margin: 0 auto;
+}
+
+.navbar-nav .nav-link {
+  position: relative;
+
+  color: #9b9b9b !important;
+
+  font-size: 16px;
+  font-weight: 500;
+
+  padding: 29px 0 26px !important;
+
+  text-decoration: none !important;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #ffffff !important;
+}
+
+/* Active link */
+
+.navbar-nav .nav-link.active {
+  color: #ffffff !important;
+}
+
+/* Cyan line below active page */
+
+.navbar-nav .nav-link.active::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 8px;
+
+  height: 3px;
+
+  border-radius: 5px;
+
+  background: #00aeea;
+
+  box-shadow: 0 0 10px rgba(0, 174, 234, 0.5);
+}
+
+/* ========================================
+   RIGHT SIDE
+======================================== */
+
+.navbar .navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+
+/* ========================================
+   BOOK SERVICE BUTTON
+======================================== */
+
+.navbar .book-service-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  min-width: 175px;
+  height: 48px;
+
+  padding: 0 20px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: linear-gradient(
+    90deg,
+    #008fd3,
+    #00aeea
+  );
+
+  color: #ffffff !important;
+
+  font-size: 16px;
+  font-weight: 500;
+
+  text-decoration: none !important;
+
+  box-shadow:
+    0 8px 22px rgba(0, 174, 234, 0.18);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.navbar .book-service-btn:hover {
+  color: #ffffff !important;
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 10px 28px rgba(0, 174, 234, 0.3);
+}
+
+/* ========================================
+   LOGOUT
+======================================== */
+
+.navbar .logout-btn {
+  background: transparent !important;
+  border: none !important;
+
+  color: #888888 !important;
+
+  font-size: 16px;
+  font-weight: 500;
+
+  padding: 8px 0 !important;
+
+  cursor: pointer;
+
+  transition: color 0.2s ease;
+}
+
+.navbar .logout-btn:hover {
+  color: #ffffff !important;
+}
+
+/* ========================================
+   NAVBAR RESPONSIVE
+======================================== */
+
+@media (max-width: 992px) {
+
+  .navbar .container {
+    height: auto;
+    min-height: 70px;
+  }
+
+  .navbar-brand {
+    margin-right: 20px;
+  }
+
+  .navbar-nav {
+    gap: 20px;
+  }
+
+  .navbar .navbar-actions {
+    gap: 15px;
+  }
+
+  .navbar .book-service-btn {
+    min-width: auto;
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .navbar-nav {
+    gap: 10px;
+  }
+
+  .navbar-nav .nav-link {
+    font-size: 14px;
+  }
+
+  .navbar-brand h2 {
+    font-size: 21px;
+  }
+
+  .navbar-brand .brand-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 13px;
+  }
+
+  .navbar .navbar-actions {
+    gap: 10px;
+  }
+
+  .navbar .book-service-btn {
+    height: 42px;
+    font-size: 14px;
+  }
+}
+
+/* ========================================
+   HERO
+======================================== */
+
+.hero {
+  min-height: calc(100vh - 76px);
+
+  display: flex;
+
+  align-items: center;
+
+  position: relative;
+
+  background-size: cover;
+
+  background-position: center;
+
+  background-repeat: no-repeat;
+
+  overflow: hidden;
+}
+
+
+/* DARK OVERLAY */
+
+.hero::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(3, 7, 18, 0.60) 0%,
+      rgba(3, 7, 18, 0.45) 45%,
+      rgba(3, 7, 18, 0.30) 100%
+    );
+
+  z-index: 1;
+
+  pointer-events: none;
+}
+
+
+/* M COLOR GLOW */
+
+.hero::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at 75% 45%,
+      rgba(0, 174, 239, 0.18),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 90% 70%,
+      rgba(226, 0, 26, 0.12),
+      transparent 30%
+    );
+
+  z-index: 1;
+
+  pointer-events: none;
+}
+
+.hero .container {
+  position: relative;
+
+  z-index: 2;
+}
+
+
+/* ========================================
+   HERO BADGE
+======================================== */
+
+.hero-badge {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 8px 14px;
+
+  border-radius: 50px;
+
+  background:
+    rgba(0, 163, 224, 0.08);
+
+  border: 1px solid
+    rgba(0, 163, 224, 0.35);
+
+  color: #00a3e0;
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+.hero-badge span {
+  width: 7px;
+
+  height: 7px;
+
+  background: #e7222e;
+
+  border-radius: 50%;
+
+  box-shadow:
+    0 0 10px
+    rgba(231, 34, 46, 0.8);
+}
+
+
+/* ========================================
+   HERO TITLE
+======================================== */
+
+.hero h1 {
+  font-size:
+    clamp(48px, 6vw, 82px);
+
+  line-height: 1.02;
+
+  letter-spacing: -4px;
+
+  font-weight: 400;
+
+  margin-top: 25px;
+}
+
+.hero h1 strong {
+  background:
+    linear-gradient(
+      90deg,
+      #0066b3 0%,
+      #00a3e0 45%,
+      #e7222e 100%
+    );
+
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+  background-clip: text;
+
+  font-weight: 800;
+}
+
+.hero p {
+  max-width: 600px;
+
+  color: #9a9a9a;
+
+  font-size: 17px;
+
+  line-height: 1.8;
+
+  margin-top: 25px;
+}
+
+
+/* ========================================
+   HERO BUTTONS
+======================================== */
+
+.hero-actions {
+  display: flex;
+
+  gap: 12px;
+
+  margin-top: 30px;
+}
+
+
+/* PRIMARY */
+
+.hero-primary-btn {
+  background:
+    linear-gradient(
+      135deg,
+      #0066b3,
+      #00a3e0
+    );
+
+  color: white;
+
+  border: none;
+
+  padding: 14px 26px;
+
+  border-radius: 8px;
+
+  font-weight: 700;
+
+  transition: 0.3s;
+
+  box-shadow:
+    0 10px 30px
+    rgba(0, 163, 224, 0.2);
+}
+
+.hero-primary-btn:hover {
+  background:
+    linear-gradient(
+      135deg,
+      #00a3e0,
+      #e7222e
+    );
+
+  color: white;
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 15px 40px
+    rgba(231, 34, 46, 0.3);
+}
+
+
+/* SECONDARY */
+
+.hero-secondary-btn {
+  color: white;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.2);
+
+  background:
+    rgba(255, 255, 255, 0.04);
+
+  backdrop-filter: blur(10px);
+
+  padding: 14px 26px;
+
+  border-radius: 8px;
+
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+.hero-secondary-btn:hover {
+  background:
+    rgba(0, 163, 224, 0.08);
+
+  border-color:
+    #00a3e0;
+
+  color: #00a3e0;
+}
+
+
+/* ========================================
+   HERO TRUST
+======================================== */
+
+.hero-trust {
+  display: flex;
+
+  gap: 35px;
+
+  margin-top: 50px;
+}
+
+.trust-item {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+.trust-item i {
+  font-size: 25px;
+
+  color: #00a3e0;
+}
+
+.trust-item strong,
+.trust-item small {
+  display: block;
+}
+
+.trust-item strong {
+  font-size: 13px;
+}
+
+.trust-item small {
+  color: #777777;
+
+  font-size: 11px;
+}
+
+
+/* ========================================
+   HERO INFO CARD
+======================================== */
+
+.hero-info-card {
+  padding: 35px;
+
+  border-radius: 24px;
+
+  /* More transparent so background image is visible */
+  background: rgba(10, 10, 10, 0.35);
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.15);
+
+  /* Reduced blur for better background visibility */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  box-shadow:
+    0 30px 80px
+    rgba(0, 0, 0, 0.35);
+
+  transition: 0.4s;
+}
+
+.hero-info-card:hover {
+  transform: translateY(-8px);
+
+  border-color:
+    rgba(0, 163, 224, 0.45);
+}
+
+
+/* CARD HEADER */
+
+.info-card-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  color: #777777;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+
+/* VEHICLE ICON */
+
+.vehicle-icon {
+  width: 90px;
+
+  height: 90px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  margin-top: 40px;
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(0, 102, 179, 0.2),
+      rgba(0, 163, 224, 0.1),
+      rgba(231, 34, 46, 0.08)
+    );
+
+  color: #00a3e0;
+
+  font-size: 45px;
+}
+
+.hero-info-card h3 {
+  font-size: 28px;
+
+  line-height: 1.3;
+
+  margin-top: 25px;
+
+  font-weight: 700;
+}
+
+.hero-info-card p {
+  font-size: 14px;
+
+  color: #777777;
+
+  margin-top: 10px;
+}
+
+
+/* VEHICLE STATUS */
+
+.vehicle-status {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-top: 30px;
+
+  padding-top: 20px;
+
+  border-top: 1px solid
+    rgba(255, 255, 255, 0.08);
+}
+
+.vehicle-status small,
+.vehicle-status strong {
+  display: block;
+}
+
+.vehicle-status small {
+  color: #777777;
+
+  font-size: 11px;
+}
+
+.vehicle-status strong {
+  font-size: 14px;
+
+  margin-top: 5px;
+}
+
+
+/* STATUS BADGE */
+
+.status-badge {
+  background:
+    rgba(0, 163, 224, 0.12);
+
+  color: #00a3e0;
+
+  padding: 7px 12px;
+
+  border-radius: 20px;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  border: 1px solid
+    rgba(0, 163, 224, 0.2);
+}
+
+
+/* ========================================
+   QUICK SERVICES
+======================================== */
+
+.quick-services {
+  background: #080808;
+
+  padding: 80px 0;
+
+  border-top: 1px solid
+    rgba(255, 255, 255, 0.05);
+}
+
+.section-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: end;
+
+  margin-bottom: 35px;
+}
+
+.section-header span {
+  color: #00a3e0;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+.section-header h2 {
+  font-size: 32px;
+
+  font-weight: 800;
+
+  margin-top: 8px;
+}
+
+.view-all {
+  color: #00a3e0;
+
+  font-weight: 700;
+
+  font-size: 14px;
+
+  transition: 0.3s;
+}
+
+.view-all:hover {
+  color: #e7222e;
+}
+
+
+/* QUICK SERVICE CARD */
+
+.quick-service-card {
+  display: block;
+
+  height: 100%;
+
+  padding: 25px 20px;
+
+  background:
+    #0d0d0d;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.07);
+
+  border-radius: 14px;
+
+  color: white;
+
+  transition: 0.3s;
+}
+
+.quick-service-card:hover {
+  transform: translateY(-6px);
+
+  background:
+    #111111;
+
+  border-color:
+    rgba(0, 163, 224, 0.5);
+
+  box-shadow:
+    0 20px 40px
+    rgba(0, 0, 0, 0.5);
+}
+
+
+/* QUICK ICON */
+
+.quick-icon {
+  width: 48px;
+
+  height: 48px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(0, 102, 179, 0.2),
+      rgba(0, 163, 224, 0.12)
+    );
+
+  color: #00a3e0;
+
+  border-radius: 12px;
+
+  font-size: 21px;
+
+  margin-bottom: 18px;
+}
+
+.quick-service-card h6 {
+  font-weight: 700;
+
+  margin-bottom: 5px;
+}
+
+.quick-service-card small {
+  color: #777777;
+
+  font-size: 11px;
+}
+
+
+/* ========================================
+   PLACEHOLDER PAGES
+======================================== */
+
+.page-placeholder {
+  min-height:
+    calc(100vh - 76px);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: #030303;
+
+  color: white;
+
+  font-weight: 800;
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 991px) {
+
+  /* =========================================================
+   AUTOCARE NAVBAR - COMPLETE CSS
+========================================================= */
+
+.autocare-navbar {
+  background: #050505;
+  border-bottom: 1px solid #151515;
+  min-height: 92px;
+  padding: 0;
+}
+
+/* BRAND */
+.autocare-navbar .navbar-brand {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 0;
+}
+
+.brand-logo {
+  width: 62px;
+  height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #009ee5, #0088cc);
+  box-shadow: 0 0 20px rgba(0, 174, 239, 0.18);
+}
+
+.brand-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.brand-name {
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.brand-tagline {
+  color: #777777;
+  font-size: 13px;
+  margin-top: 4px;
+  line-height: 1;
+}
+
+.navbar-username {
+  color: #777777;
+  font-size: 12px;
+  font-weight: 500;
+  margin-top: 5px;
+  line-height: 1;
+}
+
+/* NAVIGATION */
+.autocare-navbar .navbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 38px;
+  height: 92px;
+}
+
+.autocare-navbar .nav-item {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.autocare-navbar .nav-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 0 !important;
+
+  color: #a9a9a9 !important;
+  font-size: 16px;
+  font-weight: 500;
+
+  text-decoration: none;
+
+  transition: color 0.25s ease;
+}
+
+.autocare-navbar .nav-link:hover {
+  color: #ffffff !important;
+}
+
+.autocare-navbar .nav-link.active {
+  color: #ffffff !important;
+}
+
+/* ACTIVE PAGE UNDERLINE */
+.autocare-navbar .nav-link::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: 0;
+
+  width: 0;
+  height: 3px;
+
+  background: #00aeef;
+  border-radius: 5px;
+
+  transform: translateX(-50%);
+
+  transition: width 0.25s ease;
+}
+
+.autocare-navbar .nav-link.active::after {
+  width: 100%;
+}
+
+/* RIGHT SIDE */
+.navbar-right-buttons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* BOOK SERVICE */
+.autocare-navbar .btn-book {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 46px;
+  padding: 0 20px;
+
+  background: linear-gradient(
+    135deg,
+    #008fd3,
+    #00a9df
+  );
+
+  border: none;
+  border-radius: 7px;
+
+  color: #ffffff !important;
+
+  font-size: 15px;
+  font-weight: 500;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.autocare-navbar .btn-book:hover {
+  color: #ffffff !important;
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 5px 20px rgba(0, 174, 239, 0.25);
+}
+
+/* LOGIN / LOGOUT */
+.autocare-navbar .btn-login {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 46px;
+  padding: 0 18px;
+
+  background: transparent;
+  border: none;
+
+  color: #999999 !important;
+
+  font-size: 15px;
+  text-decoration: none;
+
+  transition: color 0.25s ease;
+}
+
+.autocare-navbar .btn-login:hover {
+  color: #ffffff !important;
+}
+
+/* MOBILE */
+@media (max-width: 991px) {
+
+  .autocare-navbar {
+    min-height: auto;
+    padding: 12px 0;
+  }
+
+  .autocare-navbar .navbar-nav {
+    height: auto;
+    gap: 0;
+    margin-top: 20px !important;
+  }
+
+  .autocare-navbar .nav-item {
+    height: auto;
+  }
+
+  .autocare-navbar .nav-link {
+    height: 45px;
+    justify-content: flex-start;
+  }
+
+  .autocare-navbar .nav-link::after {
+    left: 0;
+    transform: none;
+    bottom: 0;
+  }
+
+  .autocare-navbar .nav-link.active::after {
+    width: 40px;
+  }
+
+  .navbar-right-buttons {
+    margin-top: 15px;
+    padding-bottom: 10px;
+  }
+}
+
+  .hero {
+    padding: 80px 0;
+  }
+
+  .hero-info-card {
+    margin-top: 60px;
+  }
+
+}
+
+@media (max-width: 576px) {
+
+  .hero h1 {
+    letter-spacing: -2px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .hero-trust {
+    gap: 15px;
+  }
+
+  .hero-trust small {
+    font-size: 9px;
+  }
+
+  .hero-info-card {
+    padding: 25px;
+  }
+
+  .section-header {
+    flex-direction: column;
+
+    align-items: start;
+
+    gap: 15px;
+  }
+
+}
+
+
+/* ========================================
+   DASHBOARD
+======================================== */
+
+.dashboard-page {
+  min-height:
+    calc(100vh - 76px);
+
+  background: #030303;
+
+  padding-bottom: 80px;
+}
+
+.dashboard-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: end;
+
+  gap: 30px;
+}
+
+.dashboard-label {
+  color: #00a3e0;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+.dashboard-header h1 {
+  font-size: 36px;
+
+  font-weight: 800;
+
+  margin-top: 10px;
+}
+
+.dashboard-header p {
+  color: #777777;
+}
+
+
+/* DASHBOARD BOOK BUTTON */
+
+.dashboard-book-btn {
+  background:
+    linear-gradient(
+      135deg,
+      #0066b3,
+      #00a3e0
+    );
+
+  color: white;
+
+  padding: 12px 22px;
+
+  border-radius: 8px;
+
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+.dashboard-book-btn:hover {
+  background:
+    linear-gradient(
+      135deg,
+      #00a3e0,
+      #e7222e
+    );
+
+  color: white;
+
+  transform: translateY(-2px);
+}
+
+
+/* ========================================
+   STAT CARDS
+======================================== */
+
+.dashboard-stat-card {
+  height: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  padding: 25px;
+
+  background: #0d0d0d;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.07);
+
+  border-radius: 14px;
+
+  transition: 0.3s;
+}
+
+.dashboard-stat-card:hover {
+  transform: translateY(-4px);
+
+  border-color:
+    rgba(0, 163, 224, 0.4);
+}
+
+
+/* STAT ICON */
+
+.stat-icon {
+  width: 52px;
+
+  height: 52px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 12px;
+
+  font-size: 22px;
+}
+
+.stat-icon.blue {
+  background:
+    rgba(0, 102, 179, 0.15);
+
+  color: #00a3e0;
+}
+
+.stat-icon.orange {
+  background:
+    rgba(231, 34, 46, 0.15);
+
+  color: #e7222e;
+}
+
+.stat-icon.green {
+  background:
+    rgba(0, 163, 224, 0.12);
+
+  color: #00a3e0;
+}
+
+.stat-icon.purple {
+  background:
+    rgba(0, 102, 179, 0.12);
+
+  color: #66bde8;
+}
+
+.dashboard-stat-card small {
+  color: #777777;
+
+  font-size: 10px;
+
+  font-weight: 700;
+}
+
+.dashboard-stat-card h3 {
+  font-size: 20px;
+
+  margin: 5px 0;
+}
+
+.dashboard-stat-card p {
+  margin: 0;
+
+  color: #777777;
+
+  font-size: 11px;
+}
+
+
+/* ========================================
+   DASHBOARD SECTIONS
+======================================== */
+
+.dashboard-section {
+  background: #0d0d0d;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.07);
+
+  border-radius: 16px;
+
+  padding: 30px;
+}
+
+.section-top {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 25px;
+}
+
+.section-top span {
+  color: #00a3e0;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+.section-top h3 {
+  margin-top: 6px;
+
+  font-size: 22px;
+
+  font-weight: 700;
+}
+
+.section-top a {
+  color: #00a3e0;
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+.section-top a:hover {
+  color: #e7222e;
+}
+
+
+/* ========================================
+   VEHICLE DASHBOARD CARD
+======================================== */
+
+.vehicle-dashboard-card {
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+
+  padding: 20px;
+
+  margin-top: 15px;
+
+  background: #080808;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.05);
+
+  border-radius: 12px;
+
+  transition: 0.3s;
+}
+
+.vehicle-dashboard-card:hover {
+  border-color:
+    rgba(0, 163, 224, 0.4);
+}
+
+.vehicle-dashboard-icon {
+  width: 65px;
+
+  height: 65px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(0, 102, 179, 0.2),
+      rgba(0, 163, 224, 0.1)
+    );
+
+  color: #00a3e0;
+
+  border-radius: 12px;
+
+  font-size: 30px;
+}
+
+.vehicle-details {
+  flex: 1;
+}
+
+.vehicle-details h4 {
+  font-size: 16px;
+
+  margin: 0;
+}
+
+.vehicle-details p {
+  color: #777777;
+
+  font-size: 12px;
+
+  margin: 5px 0 15px;
+}
+
+
+/* PROGRESS */
+
+.progress-label {
+  display: flex;
+
+  justify-content: space-between;
+
+  color: #777777;
+
+  font-size: 10px;
+
+  margin-bottom: 6px;
+}
+
+.progress {
+  height: 5px;
+
+  background: #242424;
+
+  border-radius: 10px;
+}
+
+.progress-bar {
+  background:
+    linear-gradient(
+      90deg,
+      #0066b3,
+      #00a3e0,
+      #e7222e
+    );
+
+  border-radius: 10px;
+}
+
+
+/* VEHICLE ACTION */
+
+.vehicle-action {
+  min-width: 150px;
+
+  text-align: right;
+}
+
+.vehicle-action span {
+  display: block;
+
+  color: #777777;
+
+  font-size: 10px;
+}
+
+.vehicle-action strong {
+  display: block;
+
+  font-size: 12px;
+
+  margin: 5px 0 10px;
+}
+
+.vehicle-action a {
+  color: #00a3e0;
+
+  font-size: 11px;
+
+  font-weight: 600;
+}
+
+.vehicle-action a:hover {
+  color: #e7222e;
+}
+
+
+/* ========================================
+   UPCOMING APPOINTMENT
+======================================== */
+
+.upcoming-card h3 {
+  font-size: 24px;
+
+  margin-top: 10px;
+}
+
+.upcoming-icon {
+  width: 65px;
+
+  height: 65px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  margin-top: 30px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(0, 102, 179, 0.2),
+      rgba(0, 163, 224, 0.1)
+    );
+
+  color: #00a3e0;
+
+  border-radius: 15px;
+
+  font-size: 28px;
+}
+
+.upcoming-card h4 {
+  margin-top: 20px;
+
+  font-size: 18px;
+}
+
+.upcoming-card p {
+  color: #777777;
+
+  font-size: 13px;
+}
+
+
+/* APPOINTMENT INFO */
+
+.appointment-info {
+  border-top: 1px solid
+    rgba(255, 255, 255, 0.07);
+
+  border-bottom: 1px solid
+    rgba(255, 255, 255, 0.07);
+
+  padding: 15px 0;
+
+  margin: 20px 0;
+}
+
+.appointment-info div {
+  display: flex;
+
+  gap: 10px;
+
+  margin: 8px 0;
+
+  color: #a1a1a1;
+
+  font-size: 13px;
+}
+
+.appointment-info i {
+  color: #00a3e0;
+}
+
+
+/* APPOINTMENT BUTTON */
+
+.appointment-btn {
+  width: 100%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0066b3,
+      #00a3e0
+    );
+
+  color: white;
+
+  padding: 11px;
+
+  border-radius: 8px;
+
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+.appointment-btn:hover {
+  background:
+    linear-gradient(
+      135deg,
+      #00a3e0,
+      #e7222e
+    );
+
+  color: white;
+}
+
+
+/* ========================================
+   ACTIVITY TABLE
+======================================== */
+
+.activity-table {
+  color: #d4d4d4;
+
+  margin: 0;
+}
+
+.activity-table thead {
+  color: #777777;
+
+  font-size: 10px;
+
+  letter-spacing: 1px;
+}
+
+.activity-table th {
+  border-color:
+    rgba(255, 255, 255, 0.07);
+
+  padding: 15px;
+}
+
+.activity-table td {
+  border-color:
+    rgba(255, 255, 255, 0.05);
+
+  padding: 18px 15px;
+
+  vertical-align: middle;
+
+  font-size: 13px;
+}
+
+.activity-table td i {
+  color: #00a3e0;
+}
+
+
+/* COMPLETED */
+
+.status-completed {
+  display: inline-block;
+
+  padding: 5px 10px;
+
+  border-radius: 20px;
+
+  background:
+    rgba(0, 163, 224, 0.12);
+
+  color: #00a3e0;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  border: 1px solid
+    rgba(0, 163, 224, 0.15);
+}
+
+
+/* ========================================
+   DASHBOARD MOBILE
+======================================== */
+
+@media (max-width: 768px) {
+
+  .dashboard-header {
+    flex-direction: column;
+
+    align-items: start;
+  }
+
+  .dashboard-header h1 {
+    font-size: 28px;
+  }
+
+  .vehicle-dashboard-card {
+    flex-direction: column;
+
+    align-items: start;
+  }
+
+  .vehicle-action {
+    text-align: left;
+
+    width: 100%;
+  }
+
+}
+
+
+/* ========================================
+   MY VEHICLES
+======================================== */
+
+.vehicles-page {
+  min-height:
+    calc(100vh - 76px);
+
+  background: #030303;
+
+  padding-bottom: 80px;
+}
+
+.vehicles-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: end;
+
+  gap: 30px;
+}
+
+.vehicles-header h1 {
+  font-size: 42px;
+
+  font-weight: 800;
+
+  margin-top: 10px;
+}
+
+.vehicles-header p {
+  color: #777777;
+}
+
+
+/* ADD VEHICLE BUTTON */
+
+.add-vehicle-btn {
+  background:
+    linear-gradient(
+      135deg,
+      #0066b3,
+      #00a3e0
+    );
+
+  color: white;
+
+  padding: 12px 22px;
+
+  border-radius: 8px;
+
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+.add-vehicle-btn:hover {
+  background:
+    linear-gradient(
+      135deg,
+      #00a3e0,
+      #e7222e
+    );
+
+  color: white;
+}
+
+
+/* ========================================
+   VEHICLE CARD
+======================================== */
+
+.vehicle-card {
+  height: 100%;
+
+  padding: 30px;
+
+  background: #0d0d0d;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.07);
+
+  border-radius: 18px;
+
+  transition: 0.3s;
+}
+
+.vehicle-card:hover {
+  transform: translateY(-5px);
+
+  border-color:
+    rgba(0, 163, 224, 0.4);
+
+  box-shadow:
+    0 20px 50px
+    rgba(0, 0, 0, 0.5);
+}
+
+
+/* VEHICLE CARD TOP */
+
+.vehicle-card-top {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+}
+
+
+/* LARGE VEHICLE ICON */
+
+.large-vehicle-icon {
+  width: 75px;
+
+  height: 75px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(0, 102, 179, 0.2),
+      rgba(0, 163, 224, 0.1),
+      rgba(231, 34, 46, 0.08)
+    );
+
+  color: #00a3e0;
+
+  border-radius: 18px;
+
+  font-size: 35px;
+}
+
+
+/* MENU */
+
+.vehicle-menu {
+  width: 35px;
+
+  height: 35px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: #777777;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+}
+
+.vehicle-menu:hover {
+  background: #1a1a1a;
+
+  color: #00a3e0;
+}
+
+
+/* VEHICLE INFO */
+
+.vehicle-card-info {
+  margin-top: 25px;
+}
+
+.vehicle-type {
+  color: #00a3e0;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+.vehicle-card-info h2 {
+  font-size: 26px;
+
+  font-weight: 800;
+
+  margin: 8px 0;
+}
+
+.vehicle-card-info p {
+  color: #777777;
+
+  font-size: 13px;
+}
+
+
+/* ========================================
+   VEHICLE STATS
+======================================== */
+
+.vehicle-stats {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 20px;
+
+  padding: 20px 0;
+
+  margin-top: 20px;
+
+  border-top: 1px solid
+    rgba(255, 255, 255, 0.07);
+
+  border-bottom: 1px solid
+    rgba(255, 255, 255, 0.07);
+}
+
+.vehicle-stats span,
+.vehicle-service-status span {
+  display: block;
+
+  color: #777777;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+}
+
+.vehicle-stats strong {
+  display: block;
+
+  margin-top: 7px;
+
+  font-size: 13px;
+}
+
+
+/* ========================================
+   SERVICE STATUS
+======================================== */
+
+.vehicle-service-status {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 20px 0;
+}
+
+.vehicle-service-status strong {
+  display: block;
+
+  margin-top: 7px;
+
+  font-size: 14px;
+}
+
+
+/* SERVICE DUE */
+
+.service-due {
+  background:
+    rgba(231, 34, 46, 0.12);
+
+  color: #e7222e;
+
+  padding: 7px 12px;
+
+  border-radius: 20px;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  border: 1px solid
+    rgba(231, 34, 46, 0.2);
+}
+
+
+/* ========================================
+   VEHICLE BUTTONS
+======================================== */
+
+/* =========================================
+   VEHICLE CARD ACTIONS
+========================================= */
+
+.vehicle-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* EDIT BUTTON - ONLY FIX VISIBILITY */
+.vehicle-card-actions .vehicle-edit-btn {
+  color: #ffffff !important;
+  background: transparent !important;
+  border: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  cursor: pointer;
+}
+
+.vehicle-card-actions .vehicle-edit-btn:hover {
+  color: #00aeef !important;
+  background: transparent !important;
+}
+
+
+/* =========================================
+   DO NOT OVERRIDE BOOK SERVICE
+========================================= */
+
+/* Keep your existing .vehicle-book-btn CSS */
+/* Keep your existing .vehicle-view-btn CSS */
+
+.vehicle-book-btn {
+  flex: 1;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0066b3,
+      #00a3e0
+    );
+
+  color: white;
+
+  padding: 11px;
+
+  border-radius: 8px;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+.vehicle-book-btn:hover {
+  background:
+    linear-gradient(
+      135deg,
+      #00a3e0,
+      #e7222e
+    );
+
+  color: white;
+}
+
+.vehicle-view-btn {
+  flex: 1;
+
+  background: #151515;
+
+  color: #d4d4d4;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.1);
+
+  padding: 11px;
+
+  border-radius: 8px;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+.vehicle-view-btn:hover {
+  background: #1c1c1c;
+
+  color: #00a3e0;
+
+  border-color:
+    rgba(0, 163, 224, 0.4);
+}
+
+
+/* ========================================
+   ADD VEHICLE CARD
+======================================== */
+
+.add-vehicle-card {
+  height: 100%;
+
+  min-height: 380px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 40px;
+
+  background:
+    rgba(0, 163, 224, 0.025);
+
+  border: 1px dashed
+    rgba(0, 163, 224, 0.4);
+
+  border-radius: 18px;
+
+  transition: 0.3s;
+}
+
+.add-vehicle-card:hover {
+  background:
+    rgba(0, 163, 224, 0.06);
+
+  border-color: #00a3e0;
+}
+
+
+/* ADD VEHICLE ICON */
+
+.add-vehicle-icon {
+  width: 70px;
+
+  height: 70px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(0, 102, 179, 0.2),
+      rgba(0, 163, 224, 0.12)
+    );
+
+  color: #00a3e0;
+
+  border-radius: 50%;
+
+  font-size: 28px;
+
+  margin-bottom: 20px;
+}
+
+.add-vehicle-card h3 {
+  font-size: 20px;
+
+  font-weight: 700;
+}
+
+.add-vehicle-card p {
+  max-width: 300px;
+
+  color: #777777;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+
+/* OUTLINE BUTTON */
+
+.add-vehicle-outline {
+  margin-top: 10px;
+
+  border: 1px solid #00a3e0;
+
+  color: #00a3e0;
+
+  padding: 10px 25px;
+
+  border-radius: 8px;
+
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+.add-vehicle-outline:hover {
+  background:
+    linear-gradient(
+      135deg,
+      #0066b3,
+      #00a3e0
+    );
+
+  color: white;
+}
+
+
+/* ========================================
+   VEHICLES MOBILE
+======================================== */
+
+@media (max-width: 768px) {
+
+  .vehicles-header {
+    flex-direction: column;
+
+    align-items: start;
+  }
+
+  .vehicles-header h1 {
+    font-size: 32px;
+  }
+
+  .vehicle-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .vehicle-service-status {
+    align-items: start;
+
+    flex-direction: column;
+
+    gap: 15px;
+  }
+
+  .vehicle-card-actions {
+    flex-direction: column;
+  }
+
+}
+
+
+/* ========================================
+   ADD VEHICLE FORM
+======================================== */
+
+.add-vehicle-form {
+  background: #0d0d0d;
+
+  border: 1px solid
+    rgba(0, 163, 224, 0.3);
+
+  border-radius: 18px;
+
+  padding: 30px;
+
+  animation:
+    formSlideDown 0.3s ease;
+}
+
+@keyframes formSlideDown {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+
+}
+
+
+/* FORM HEADER */
+
+.form-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 30px;
+}
+
+.form-header h3 {
+  margin-top: 8px;
+
+  font-size: 22px;
+
+  font-weight: 700;
+}
+
+.form-header > i {
+  width: 55px;
+
+  height: 55px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(0, 102, 179, 0.2),
+      rgba(0, 163, 224, 0.1)
+    );
+
+  color: #00a3e0;
+
+  border-radius: 12px;
+
+  font-size: 25px;
+}
+
+
+/* ========================================
+   FORM LABELS
+======================================== */
+
+.add-vehicle-form label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #a1a1a1;
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+
+/* ========================================
+   INPUTS
+======================================== */
+
+/* ========================================
+   INPUTS
+======================================== */
+
+.add-vehicle-form input,
+.add-vehicle-form select {
+  width: 100%;
+
+  padding: 13px 15px;
+
+  background-color: #080808 !important;
+
+  color: #e5e5e5 !important;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.1);
+
+  border-radius: 8px;
+
+  outline: none;
+
+  font-size: 13px;
+
+  transition: 0.2s;
+}
+
+.add-vehicle-form input:focus,
+.add-vehicle-form select:focus {
+  background-color: #080808 !important;
+
+  color: #ffffff !important;
+
+  border-color: #00a3e0;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(0, 163, 224, 0.1);
+}
+
+.add-vehicle-form input::placeholder {
+  color: #555555;
+}
+
+
+/* SELECT */
+
+.add-vehicle-form select {
+  cursor: pointer;
+}
+
+.add-vehicle-form option {
+  background: #0d0d0d;
+  color: white;
+}
+
+
+/* ========================================
+   FORM BUTTONS
+======================================== */
+
+.form-actions {
+  display: flex;
+
+  justify-content: flex-end;
+
+  gap: 12px;
+
+  margin-top: 30px;
+
+  padding-top: 25px;
+
+  border-top: 1px solid
+    rgba(255, 255, 255, 0.07);
+}
+
+
+/* CANCEL */
+
+.cancel-btn {
+  background: #151515;
+
+  color: #a1a1a1;
+
+  padding: 11px 22px;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.1);
+
+  border-radius: 8px;
+
+  transition: 0.3s;
+}
+
+.cancel-btn:hover {
+  color: white;
+
+  background: #202020;
+
+  border-color:
+    rgba(0, 163, 224, 0.3);
+}
+
+
+/* SAVE */
+
+.save-vehicle-btn {
+  background:
+    linear-gradient(
+      135deg,
+      #0066b3,
+      #00a3e0
+    );
+
+  color: white;
+
+  padding: 11px 22px;
+
+  border-radius: 8px;
+
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+.save-vehicle-btn:hover {
+  background:
+    linear-gradient(
+      135deg,
+      #00a3e0,
+      #e7222e
+    );
+
+  color: white;
+}
+
+
+/* ========================================
+   DELETE BUTTON
+======================================== */
+
+.delete-vehicle-btn {
+  width: 38px;
+
+  height: 38px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background:
+    rgba(231, 34, 46, 0.08);
+
+  color: #e7222e;
+
+  border: 1px solid
+    rgba(231, 34, 46, 0.15);
+
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.delete-vehicle-btn:hover {
+  background:
+    rgba(231, 34, 46, 0.2);
+
+  color: #ff4650;
+
+  border-color:
+    rgba(231, 34, 46, 0.4);
+}
+
+
+/* ========================================
+   FORM MOBILE
+======================================== */
+
+@media (max-width: 768px) {
+
+  .add-vehicle-form {
+    padding: 20px;
+  }
+
+  .form-header {
+    align-items: flex-start;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .form-actions button {
+    width: 100%;
+  }
+
+}
+
+/* ========================================
+   SERVICES PAGE
+======================================== */
+
+.services-page {
+  min-height: 100vh;
+  background: #0b0d10;
+  color: #ffffff;
+}
+
+
+/* ========================================
+   SERVICES HEADER
+======================================== */
+
+.services-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  padding: 30px 0;
+}
+
+.services-header h1 {
+  margin: 10px 0;
+  font-size: 42px;
+  font-weight: 700;
+}
+
+.services-header p {
+  margin: 0;
+  color: #aeb4bd;
+  font-size: 16px;
+  max-width: 600px;
+}
+
+.services-header-icon {
+  width: 90px;
+  height: 90px;
+  border-radius: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(0, 123, 255, 0.08);
+  border: 1px solid rgba(0, 123, 255, 0.25);
+
+  font-size: 38px;
+  color: #008cff;
+}
+
+
+/* ========================================
+   SERVICE CARD
+======================================== */
+
+.service-card {
+  height: 100%;
+  padding: 30px;
+
+  background: rgba(18, 21, 26, 0.85);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+
+  transition: all 0.3s ease;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+
+  border-color: rgba(0, 123, 255, 0.5);
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.4),
+    0 0 25px rgba(0, 123, 255, 0.08);
+}
+
+
+/* ========================================
+   SERVICE ICON
+======================================== */
+
+.service-icon {
+  width: 60px;
+  height: 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 15px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(0, 123, 255, 0.15),
+    rgba(255, 0, 0, 0.08)
+  );
+
+  border: 1px solid rgba(0, 123, 255, 0.25);
+
+  color: #008cff;
+  font-size: 26px;
+
+  margin-bottom: 25px;
+}
+
+
+/* ========================================
+   SERVICE CONTENT
+======================================== */
+
+.service-card h3 {
+  font-size: 23px;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.service-card p {
+  color: #aeb4bd;
+  line-height: 1.7;
+  font-size: 15px;
+
+  min-height: 75px;
+}
+
+
+/* ========================================
+   SERVICE INFO
+======================================== */
+
+.service-card-info {
+  display: flex;
+  justify-content: space-between;
+
+  margin-top: 20px;
+  padding: 18px 0;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.service-card-info div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.service-card-info span {
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: #777f89;
+}
+
+.service-card-info strong {
+  font-size: 16px;
+  color: #ffffff;
+}
+
+
+/* ========================================
+   BOOK SERVICE BUTTON
+======================================== */
+
+.service-book-btn {
+  width: 100%;
+  margin-top: 20px;
+
+  padding: 12px 20px;
+
+  border-radius: 10px;
+
+  background: linear-gradient(
+    90deg,
+    #0066ff,
+    #0099ff
+  );
+
+  color: #ffffff;
+
+  font-weight: 600;
+
+  border: none;
+
+  transition: all 0.3s ease;
+}
+
+.service-book-btn:hover {
+  color: #ffffff;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 20px rgba(0, 123, 255, 0.3);
+}
+
+
+/* ========================================
+   SERVICES CTA
+======================================== */
+
+.services-cta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+
+  padding: 35px;
+
+  background: rgba(18, 21, 26, 0.85);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 20px;
+}
+
+.services-cta h2 {
+  margin: 10px 0;
+  font-size: 26px;
+}
+
+.services-cta p {
+  margin: 0;
+  color: #aeb4bd;
+}
+
+.service-cta-btn {
+  white-space: nowrap;
+
+  padding: 13px 25px;
+
+  border-radius: 10px;
+
+  background: transparent;
+
+  border: 1px solid #008cff;
+
+  color: #008cff;
+
+  font-weight: 600;
+
+  transition: all 0.3s ease;
+}
+
+.service-cta-btn:hover {
+  background: #008cff;
+  color: #ffffff;
+}
+
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 768px) {
+
+  .services-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .services-header h1 {
+    font-size: 32px;
+  }
+
+  .services-header-icon {
+    display: none;
+  }
+
+  .services-cta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .service-cta-btn {
+    width: 100%;
+  }
+
+}
+
+/* ========================================
+   BOOK SERVICE PAGE
+======================================== */
+
+.book-service-card {
+  max-width: 100%;
+  padding: 35px;
+}
+
+/* FORM LABELS */
+
+.book-service-card label {
+  display: block;
+  margin-bottom: 10px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  color: #d8dde5;
+}
+
+/* FORM INPUTS */
+
+.book-service-card input,
+.book-service-card select,
+.book-service-card textarea {
+  width: 100%;
+
+  padding: 13px 15px;
+
+  background: #11151a;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  border-radius: 10px;
+
+  color: #ffffff;
+
+  font-size: 15px;
+
+  outline: none;
+
+  transition: all 0.3s ease;
+}
+
+/* SELECT DROPDOWN */
+
+.book-service-card select {
+  cursor: pointer;
+}
+
+/* TEXTAREA */
+
+.book-service-card textarea {
+  resize: vertical;
+
+  min-height: 130px;
+
+  line-height: 1.6;
+}
+
+/* PLACEHOLDER */
+
+.book-service-card input::placeholder,
+.book-service-card textarea::placeholder {
+  color: #6f7782;
+}
+
+/* FOCUS */
+
+.book-service-card input:focus,
+.book-service-card select:focus,
+.book-service-card textarea:focus {
+  border-color: #008cff;
+
+  box-shadow: 0 0 0 3px rgba(0, 140, 255, 0.1);
+}
+
+/* DATE INPUT */
+
+.book-service-card input[type="date"] {
+  color-scheme: dark;
+}
+
+/* FORM ACTIONS */
+
+.book-service-card .form-actions {
+  display: flex;
+
+  justify-content: flex-end;
+
+  gap: 15px;
+
+  padding-top: 25px;
+
+  margin-top: 10px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* CANCEL BUTTON */
+
+.book-service-card .cancel-btn {
+  padding: 12px 25px;
+
+  background: #1a1d22;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  color: #c7ccd3;
+
+  border-radius: 10px;
+}
+
+.book-service-card .cancel-btn:hover {
+  background: #242830;
+
+  color: #ffffff;
+}
+
+/* CONFIRM BUTTON */
+
+.book-service-card .save-vehicle-btn {
+  padding: 12px 25px;
+
+  background: linear-gradient(
+    90deg,
+    #0066ff,
+    #0099ff
+  );
+
+  border: none;
+
+  color: #ffffff;
+
+  border-radius: 10px;
+
+  font-weight: 600;
+
+  transition: all 0.3s ease;
+}
+
+.book-service-card .save-vehicle-btn:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 20px rgba(0, 123, 255, 0.3);
+}
+
+
+/* ========================================
+   SUCCESS ALERT
+======================================== */
+
+.booking-success-alert {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 18px 20px;
+
+  background: rgba(0, 180, 100, 0.08);
+
+  border: 1px solid rgba(0, 180, 100, 0.3);
+
+  border-radius: 12px;
+}
+
+.success-icon {
+  font-size: 25px;
+
+  color: #00c878;
+}
+
+.booking-success-alert strong {
+  color: #ffffff;
+}
+
+.booking-success-alert p {
+  margin: 4px 0 0;
+
+  color: #9ba3ad;
+
+  font-size: 14px;
+}
+
+.booking-success-alert button {
+  margin-left: auto;
+
+  background: transparent;
+
+  border: none;
+
+  color: #9ba3ad;
+
+  cursor: pointer;
+}
+
+.booking-success-alert button:hover {
+  color: #ffffff;
+}
+
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 768px) {
+
+  .book-service-card {
+    padding: 20px;
+  }
+
+  .book-service-card .form-actions {
+    flex-direction: column;
+  }
+
+  .book-service-card .form-actions a,
+  .book-service-card .form-actions button {
+    width: 100%;
+  }
+
+}
+
+/* ========================================
+   SERVICE HISTORY LIST
+======================================== */
+
+.service-history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+
+/* SERVICE HISTORY ITEM */
+
+.service-history-item {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.03);
+  transition: all 0.3s ease;
+}
+
+.service-history-item:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+
+/* SERVICE HISTORY ICON */
+
+.service-history-item .service-history-icon {
+  width: 50px;
+  height: 50px;
+  min-width: 50px;
+  border-radius: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(25, 135, 84, 0.15);
+  color: #198754;
+
+  font-size: 22px;
+}
+
+
+/* SERVICE INFORMATION */
+
+.service-history-info {
+  flex: 1;
+}
+
+.service-history-info h4 {
+  margin: 0 0 8px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.service-history-info p {
+  margin: 4px 0;
+  color: #999;
+  font-size: 14px;
+}
+
+
+/* COMPLETED BADGE */
+
+.service-completed-badge {
+  padding: 7px 12px;
+  border-radius: 20px;
+
+  background: rgba(25, 135, 84, 0.15);
+  color: #35c98a;
+
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+
+/* ========================================
+   MARK COMPLETED BUTTON
+======================================== */
+
+.booking-complete-btn {
+  background: rgba(25, 135, 84, 0.15);
+  color: #35c98a;
+  border: 1px solid rgba(25, 135, 84, 0.3);
+}
+
+.booking-complete-btn:hover {
+  background: #198754;
+  color: white;
+  border-color: #198754;
+}
+
+
+/* ========================================
+   RESPONSIVE SERVICE HISTORY
+======================================== */
+
+@media (max-width: 768px) {
+
+  .service-history-item {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .service-history-info {
+    min-width: calc(100% - 70px);
+  }
+
+  .service-completed-badge {
+    margin-left: 68px;
+  }
+
+}
+
+/* ========================================
+   DASHBOARD
+======================================== */
+
+.dashboard-page {
+  min-height: calc(100vh - 70px);
+  padding-bottom: 50px;
+}
+
+
+/* HEADER */
+
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.dashboard-header h1 {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.dashboard-header p {
+  color: #999;
+  margin-bottom: 0;
+}
+
+.dashboard-book-btn {
+  background: #ffffff;
+  color: #111;
+  font-weight: 600;
+  padding: 12px 20px;
+  border-radius: 10px;
+}
+
+.dashboard-book-btn:hover {
+  background: #ddd;
+  color: #111;
+}
+
+
+/* STAT CARDS */
+
+.dashboard-stat-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  padding: 22px;
+
+  border-radius: 16px;
+
+  background: rgba(255, 255, 255, 0.04);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  transition: all 0.3s ease;
+}
+
+.dashboard-stat-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.dashboard-stat-icon {
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  font-size: 22px;
+}
+
+.dashboard-stat-card span {
+  display: block;
+  color: #888;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+.dashboard-stat-card h2 {
+  margin: 5px 0 0;
+  font-size: 28px;
+}
+
+
+/* DASHBOARD CARDS */
+
+.dashboard-card {
+  padding: 25px;
+
+  border-radius: 18px;
+
+  background: rgba(255, 255, 255, 0.04);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.dashboard-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 22px;
+}
+
+.dashboard-card-header h3 {
+  margin: 5px 0 0;
+}
+
+.dashboard-view-link {
+  color: #aaa;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.dashboard-view-link:hover {
+  color: #fff;
+}
+
+
+/* VEHICLE LIST */
+
+.dashboard-vehicle-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.dashboard-vehicle-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  padding: 14px;
+
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.03);
+
+  transition: all 0.3s ease;
+}
+
+.dashboard-vehicle-item:hover {
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.dashboard-vehicle-icon {
+  width: 45px;
+  height: 45px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.dashboard-vehicle-info {
+  flex: 1;
+}
+
+.dashboard-vehicle-info h4 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.dashboard-vehicle-info p {
+  margin: 4px 0 0;
+  color: #888;
+  font-size: 13px;
+}
+
+.dashboard-vehicle-view {
+  width: 35px;
+  height: 35px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color: #aaa;
+  text-decoration: none;
+
+  background: rgba(255, 255, 255, 0.05);
+}
+
+
+/* BOOKING LIST */
+
+.dashboard-booking-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.dashboard-booking-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 14px;
+
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.dashboard-booking-icon {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.dashboard-booking-info {
+  flex: 1;
+}
+
+.dashboard-booking-info h4 {
+  margin: 0;
+  font-size: 15px;
+}
+
+.dashboard-booking-info p {
+  margin: 4px 0 0;
+  color: #888;
+  font-size: 12px;
+}
+
+
+/* STATUS */
+
+.dashboard-status {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 6px 9px;
+  border-radius: 20px;
+}
+
+.dashboard-status.upcoming {
+  background: rgba(255, 193, 7, 0.12);
+  color: #ffc107;
+}
+
+.dashboard-status.completed {
+  background: rgba(25, 135, 84, 0.15);
+  color: #35c98a;
+}
+
+.dashboard-status.cancelled {
+  background: rgba(220, 53, 69, 0.12);
+  color: #dc3545;
+}
+
+
+/* EMPTY STATE */
+
+.dashboard-empty {
+  text-align: center;
+  padding: 30px 15px;
+  color: #888;
+}
+
+.dashboard-empty > i {
+  display: block;
+  font-size: 35px;
+  margin-bottom: 12px;
+}
+
+.dashboard-small-btn {
+  margin-top: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+
+/* QUICK ACTIONS */
+
+.dashboard-action-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  padding: 18px;
+
+  color: #fff;
+  text-decoration: none;
+
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.03);
+
+  border: 1px solid rgba(255, 255, 255, 0.06);
+
+  transition: all 0.3s ease;
+}
+
+.dashboard-action-card:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.07);
+  color: #fff;
+}
+
+.dashboard-action-card > i:first-child {
+  font-size: 22px;
+}
+
+.dashboard-action-card div {
+  flex: 1;
+}
+
+.dashboard-action-card h4 {
+  margin: 0;
+  font-size: 15px;
+}
+
+.dashboard-action-card p {
+  margin: 4px 0 0;
+  color: #888;
+  font-size: 12px;
+}
+
+.dashboard-action-card > i:last-child {
+  color: #888;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+
+  .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .dashboard-book-btn {
+    width: 100%;
+  }
+
+}
+
+/* ========================================
+   LOADING SCREEN
+======================================== */
+
+.loader-screen {
+  position: fixed;
+  inset: 0;
+
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 99999;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(40, 40, 40, 0.95),
+      rgba(10, 10, 10, 1) 70%
+    );
+
+  color: #fff;
+}
+
+
+/* LOADER CONTENT */
+
+.loader-content {
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  animation: loaderFadeIn 0.8s ease;
+}
+
+
+/* LOGO */
+
+.loader-logo {
+  width: 75px;
+  height: 75px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 20px;
+
+  border-radius: 50%;
+
+  font-size: 32px;
+
+  background: linear-gradient(
+    135deg,
+    #1e88e5,
+    #00a8e8,
+    #e63946
+  );
+
+  box-shadow:
+    0 0 25px rgba(30, 136, 229, 0.25);
+
+  animation: loaderPulse 2s infinite;
+}
+
+
+/* BRAND NAME */
+
+.loader-content h1 {
+  margin: 0;
+
+  font-size: 38px;
+
+  font-weight: 800;
+
+  letter-spacing: 3px;
+}
+
+.loader-content h1 span {
+  background: linear-gradient(
+    90deg,
+    #1e88e5,
+    #00a8e8,
+    #e63946
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+/* TAGLINE */
+
+.loader-content p {
+  margin-top: 8px;
+  margin-bottom: 25px;
+
+  color: #999;
+
+  font-size: 14px;
+
+  letter-spacing: 1px;
+}
+
+
+/* SPINNER */
+
+.loader-spinner {
+  width: 45px;
+  height: 45px;
+
+  border-radius: 50%;
+
+  border: 3px solid rgba(255, 255, 255, 0.1);
+
+  border-top-color: #1e88e5;
+  border-right-color: #e63946;
+
+  animation: loaderSpin 1s linear infinite;
+}
+
+
+/* LOADING TEXT */
+
+.loader-text {
+  margin-top: 18px;
+
+  color: #777;
+
+  font-size: 12px;
+
+  letter-spacing: 1px;
+
+  animation: loaderTextPulse 1.5s ease-in-out infinite;
+}
+
+
+/* ========================================
+   ANIMATIONS
+======================================== */
+
+@keyframes loaderSpin {
+
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+
+}
+
+
+@keyframes loaderPulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+
+    box-shadow:
+      0 0 20px rgba(30, 136, 229, 0.2);
+  }
+
+  50% {
+    transform: scale(1.08);
+
+    box-shadow:
+      0 0 35px rgba(30, 136, 229, 0.4);
+  }
+
+}
+
+
+@keyframes loaderFadeIn {
+
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+@keyframes loaderTextPulse {
+
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 576px) {
+
+  .loader-content h1 {
+    font-size: 30px;
+  }
+
+  .loader-logo {
+    width: 65px;
+    height: 65px;
+
+    font-size: 27px;
+  }
+
+}
+
+/* ========================================
+   BOOKING ERROR ALERT
+======================================== */
+
+.booking-error-alert {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  width: 100%;
+  padding: 18px 20px;
+  margin-bottom: 10px;
+  border-radius: 12px;
+
+  background: rgba(220, 53, 69, 0.1);
+  border: 1px solid rgba(220, 53, 69, 0.3);
+
+  color: #dc3545;
+  box-sizing: border-box;
+
+  animation: bookingErrorSlideIn 0.3s ease;
+}
+
+/* ========================================
+   ERROR ICON
+======================================== */
+
+.booking-error-alert .error-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 24px;
+  line-height: 1;
+
+  flex-shrink: 0;
+}
+
+/* ========================================
+   ERROR CONTENT
+======================================== */
+
+.booking-error-alert > div:nth-child(2) {
+  flex: 1;
+  min-width: 0;
+}
+
+.booking-error-alert strong {
+  display: block;
+  margin-bottom: 5px;
+
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.booking-error-alert p {
+  margin: 0;
+
+  font-size: 14px;
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+/* ========================================
+   CLOSE BUTTON
+======================================== */
+
+.booking-error-alert button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 32px;
+  height: 32px;
+
+  margin-left: auto;
+  padding: 0;
+
+  border: none;
+  border-radius: 6px;
+
+  background: transparent;
+  color: inherit;
+
+  font-size: 16px;
+
+  cursor: pointer;
+
+  flex-shrink: 0;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.booking-error-alert button:hover {
+  background: rgba(220, 53, 69, 0.1);
+  transform: scale(1.05);
+}
+
+.booking-error-alert button:active {
+  transform: scale(0.95);
+}
+
+/* ========================================
+   ANIMATION
+======================================== */
+
+@keyframes bookingErrorSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================================
+   MOBILE RESPONSIVE
+======================================== */
+
+@media (max-width: 576px) {
+  .booking-error-alert {
+    gap: 12px;
+    padding: 15px;
+    border-radius: 10px;
+  }
+
+  .booking-error-alert .error-icon {
+    font-size: 21px;
+  }
+
+  .booking-error-alert strong {
+    font-size: 15px;
+  }
+
+  .booking-error-alert p {
+    font-size: 13px;
+  }
+
+  .booking-error-alert button {
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+  }
+}
+
+
+/* ========================================
+   BOOKING FILTERS
+======================================== */
+
+.booking-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.booking-filter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 30px;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.booking-filter:hover {
+  transform: translateY(-2px);
+}
+
+.booking-filter.active {
+  background: #0d6efd;
+  border-color: #0d6efd;
+  color: #fff;
+}
+
+.booking-filter span {
+  min-width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  font-size: 12px;
+}
+
+
+/* ========================================
+   BOOKING REFERENCE
+======================================== */
+
+.booking-reference {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 12px 15px;
+  margin: 20px 0;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.booking-reference span {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  opacity: 0.6;
+}
+
+.booking-reference strong {
+  font-size: 14px;
+}
+
+
+/* ========================================
+   BOOKING STATUS
+======================================== */
+
+.booking-status {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.booking-status.upcoming {
+  background: rgba(255, 193, 7, 0.15);
+  color: #ffc107;
+}
+
+.booking-status.completed {
+  background: rgba(25, 135, 84, 0.15);
+  color: #198754;
+}
+
+.booking-status.cancelled {
+  background: rgba(220, 53, 69, 0.15);
+  color: #dc3545;
+}
+
+
+/* ========================================
+   BOOKING MODAL
+======================================== */
+
+.booking-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(5px);
+}
+
+.booking-modal {
+  width: 100%;
+  max-width: 650px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 30px;
+  border-radius: 18px;
+  background: #1e1e1e;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+
+/* ========================================
+   MODAL HEADER
+======================================== */
+
+.booking-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.booking-modal-header h2 {
+  margin-top: 8px;
+  margin-bottom: 0;
+}
+
+.booking-modal-close {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  cursor: pointer;
+}
+
+.booking-modal-close:hover {
+  background: rgba(220, 53, 69, 0.2);
+  color: #dc3545;
+}
+
+
+/* ========================================
+   MODAL STATUS
+======================================== */
+
+.booking-modal-status {
+  margin: 20px 0;
+}
+
+
+/* ========================================
+   MODAL DETAILS
+======================================== */
+
+.booking-modal-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.modal-detail {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.modal-detail > i {
+  font-size: 22px;
+  opacity: 0.7;
+}
+
+.modal-detail span {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  opacity: 0.6;
+}
+
+.modal-detail strong {
+  display: block;
+  font-size: 14px;
+}
+
+
+/* ========================================
+   MODAL NOTES
+======================================== */
+
+.modal-notes {
+  margin-top: 20px;
+  padding: 18px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.modal-notes span {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  opacity: 0.7;
+}
+
+.modal-notes p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+
+/* ========================================
+   MODAL ACTIONS
+======================================== */
+
+.booking-modal-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 768px) {
+
+  .booking-filters {
+    gap: 8px;
+  }
+
+  .booking-filter {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+
+  .booking-modal {
+    padding: 22px;
+  }
+
+  .booking-modal-details {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-modal-actions {
+    flex-direction: column;
+  }
+
+  .booking-modal-actions .btn {
+    width: 100%;
+  }
+
+}
+
+/* ========================================
+   VEHICLE FORM INPUT FIX
+======================================== */
+
+.vehicle-details-card input,
+.vehicle-details-card select,
+.vehicle-details-card textarea {
+  width: 100%;
+  background-color: #0f0f0f !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  padding: 15px 18px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+/* Input focus */
+
+.vehicle-details-card input:focus,
+.vehicle-details-card select:focus,
+.vehicle-details-card textarea:focus {
+  background-color: #0f0f0f !important;
+  color: #ffffff !important;
+  border-color: #00aaff;
+  box-shadow: 0 0 0 3px rgba(0, 170, 255, 0.12);
+}
+
+/* Placeholder */
+
+.vehicle-details-card input::placeholder,
+.vehicle-details-card textarea::placeholder {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+/* Select options */
+
+.vehicle-details-card select option {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+
+/* ========================================
+   CHROME AUTOFILL FIX
+======================================== */
+
+.vehicle-details-card input:-webkit-autofill,
+.vehicle-details-card input:-webkit-autofill:hover,
+.vehicle-details-card input:-webkit-autofill:focus,
+.vehicle-details-card input:-webkit-autofill:active {
+  -webkit-text-fill-color: #ffffff !important;
+  -webkit-box-shadow: 0 0 0 1000px #0f0f0f inset !important;
+  box-shadow: 0 0 0 1000px #0f0f0f inset !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+
+/* ========================================
+   NUMBER INPUT
+======================================== */
+
+.vehicle-details-card input[type="number"] {
+  color-scheme: dark;
+}
+
+
+/* ========================================
+   DATE INPUT
+======================================== */
+
+.vehicle-details-card input[type="date"] {
+  color-scheme: dark;
+}
+
+
+/* ========================================
+   FORM LABELS
+======================================== */
+
+.vehicle-details-card label {
+  display: block;
+  margin-bottom: 8px;
+  color: #d0d0d0;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* ========================================
+   ACTIVE NAVBAR LINK
+======================================== */
+
+.autocare-navbar .nav-link.active {
+  color: #00a3e0;
+  font-weight: 600;
+}
+
+
+/* ACTIVE NAVBAR LINK UNDERLINE */
+
+.autocare-navbar .nav-link {
+  position: relative;
+}
+
+.autocare-navbar .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 2px;
+  width: 0;
+  height: 2px;
+  background: #00a3e0;
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+
+.autocare-navbar .nav-link.active::after {
+  width: 70%;
+}
+
+/* ========================================
+   VEHICLE DETAILS HEADER
+======================================== */
+
+.vehicle-details-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+
+.vehicle-details-header h1 {
+  margin: 8px 0;
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.vehicle-details-header p {
+  margin: 0;
+  color: #a1a1a1;
+}
+
+
+/* ========================================
+   VEHICLE DETAILS CARD
+======================================== */
+
+.vehicle-details-card {
+  background: #0d0d0d;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  padding: 30px;
+}
+
+
+/* ========================================
+   CARD HEADER
+======================================== */
+
+.details-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.details-card-header h3 {
+  margin: 8px 0 0;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.details-card-header > i {
+  font-size: 28px;
+  color: #00a3e0;
+}
+
+
+/* ========================================
+   DETAIL ITEMS
+======================================== */
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.detail-item span {
+  color: #777;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.detail-item strong {
+  color: #f5f5f5;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+
+/* ========================================
+   SERVICE DETAILS
+======================================== */
+
+.service-details-card {
+  height: 100%;
+}
+
+.service-status-icon {
+  margin: 20px 0 10px;
+  color: #00a3e0;
+  font-size: 28px;
+}
+
+.service-details-card h3 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.service-details-card > p {
+  color: #999;
+  margin: 8px 0 20px;
+}
+
+
+/* ========================================
+   SERVICE STATUS BOX
+======================================== */
+
+.service-status-box {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 15px;
+  margin-bottom: 15px;
+  background: rgba(0, 163, 224, 0.08);
+  border: 1px solid rgba(0, 163, 224, 0.2);
+  border-radius: 10px;
+}
+
+.service-status-box span,
+.upcoming-service-box span {
+  color: #777;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.service-status-box strong {
+  color: #00a3e0;
+}
+
+
+/* ========================================
+   UPCOMING SERVICE
+======================================== */
+
+.upcoming-service-box {
+  padding: 15px;
+  margin-bottom: 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+}
+
+.upcoming-service-box strong {
+  display: block;
+  margin: 8px 0 12px;
+  font-size: 17px;
+}
+
+.upcoming-service-box p {
+  margin: 6px 0;
+  color: #aaa;
+}
+
+
+/* ========================================
+   SERVICE HISTORY
+======================================== */
+
+.service-history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.service-history-item {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 18px;
+  background: #111;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+}
+
+.service-history-icon {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: rgba(0, 163, 224, 0.1);
+  color: #00a3e0;
+  border-radius: 10px;
+}
+
+.service-history-info {
+  flex: 1;
+}
+
+.service-history-info h4 {
+  margin: 0 0 8px;
+  font-size: 17px;
+}
+
+.service-history-info p {
+  margin: 4px 0;
+  color: #999;
+  font-size: 13px;
+}
+
+.service-completed-badge {
+  padding: 6px 10px;
+  color: #4ade80;
+  background: rgba(74, 222, 128, 0.1);
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+
+/* ========================================
+   EMPTY SERVICE HISTORY
+======================================== */
+
+.empty-service-history {
+  padding: 45px 20px;
+  text-align: center;
+}
+
+.empty-service-history .service-history-icon {
+  margin: 0 auto 15px;
+}
+
+.empty-service-history h4 {
+  margin-bottom: 8px;
+}
+
+.empty-service-history p {
+  margin: 0;
+  color: #888;
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 768px) {
+
+  .vehicle-details-header {
+    align-items: flex-start;
+  }
+
+  .vehicle-details-header h1 {
+    font-size: 28px;
+  }
+
+  .vehicle-details-card {
+    padding: 20px;
+  }
+
+  .service-history-item {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .service-completed-badge {
+    margin-left: 60px;
+  }
+
+
+  /* ========================================
+   ADD VEHICLE FORM - FINAL INPUT FIX
+======================================== */
+
+.add-vehicle-form input,
+.add-vehicle-form select,
+.add-vehicle-form textarea {
+  width: 100%;
+  padding: 13px 15px;
+  background-color: #080808 !important;
+  color: #e5e5e5 !important;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  outline: none;
+  font-size: 13px;
+  box-shadow: none;
+}
+
+.add-vehicle-form input:focus,
+.add-vehicle-form select:focus,
+.add-vehicle-form textarea:focus {
+  background-color: #080808 !important;
+  color: #ffffff !important;
+  border-color: #00a3e0;
+  box-shadow: 0 0 0 3px rgba(0, 163, 224, 0.1);
+}
+
+.add-vehicle-form input::placeholder,
+.add-vehicle-form textarea::placeholder {
+  color: #555555;
+}
+
+.add-vehicle-form option {
+  background-color: #080808;
+  color: #ffffff;
+}
+}
+
+/* ========================================
+   REMOVE BROWSER AUTOFILL BACKGROUND
+======================================== */
+
+.add-vehicle-form input:-webkit-autofill,
+.add-vehicle-form input:-webkit-autofill:hover,
+.add-vehicle-form input:-webkit-autofill:focus,
+.add-vehicle-form input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px #080808 inset !important;
+  -webkit-text-fill-color: #e5e5e5 !important;
+  caret-color: #ffffff;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+
+/* ========================================
+   ADD VEHICLE FORM INPUTS
+======================================== */
+
+.add-vehicle-form input[type="text"],
+.add-vehicle-form input[type="number"],
+.add-vehicle-form input[type="date"],
+.add-vehicle-form select {
+  background: #080808 !important;
+  background-color: #080808 !important;
+  color: #e5e5e5 !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+
+/* FOCUS */
+
+.add-vehicle-form input[type="text"]:focus,
+.add-vehicle-form input[type="number"]:focus,
+.add-vehicle-form input[type="date"]:focus,
+.add-vehicle-form select:focus {
+  background: #080808 !important;
+  background-color: #080808 !important;
+  color: #ffffff !important;
+  border-color: #00a3e0 !important;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 163, 224, 0.1) !important;
+}
+
+
+/* PLACEHOLDER */
+
+.add-vehicle-form input::placeholder {
+  color: #555555 !important;
+}
+
+
+/* SELECT OPTIONS */
+
+.add-vehicle-form select option {
+  background-color: #080808 !important;
+  color: #ffffff !important;
+}
+
+/* ========================================
+   LOGIN PAGE
+======================================== */
+
+.login-page {
+  min-height: calc(100vh - 80px);
+  background: #080808;
+  display: flex;
+  align-items: center;
+  padding: 50px 20px;
+}
+
+
+/* ========================================
+   LOGIN CONTAINER
+======================================== */
+
+.login-container {
+  width: 100%;
+  max-width: 1100px;
+  min-height: 650px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  background: #0d0d0d;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+
+  overflow: hidden;
+
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+
+/* ========================================
+   LEFT LOGIN INFO
+======================================== */
+
+.login-info {
+    flex: 1;
+    padding: 70px 60px;
+    background: #0b0b0b;
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* ========================================
+   LOGIN BRAND
+======================================== */
+
+.login-brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+    color: white;
+}
+
+.login-logo-image {
+    width: 58px;
+    height: 58px;
+    object-fit: contain;
+    border-radius: 14px;
+    flex-shrink: 0;
+}
+
+.login-brand h2 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.login-brand span {
+    display: block;
+    margin-top: 3px;
+    color: #888888;
+    font-size: 13px;
+}
+
+.login-brand:hover {
+  color: white;
+}
+
+.login-brand .brand-icon {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(
+    135deg,
+    #0066b3,
+    #00a3e0
+  );
+
+  color: white;
+
+  border-radius: 12px;
+
+  font-size: 22px;
+}
+
+.login-brand h2 {
+  margin: 0;
+
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.login-brand span {
+  display: block;
+
+  margin-top: 2px;
+
+  color: #777;
+  font-size: 11px;
+}
+
+
+/* ========================================
+   LOGIN INFO CONTENT
+======================================== */
+
+.login-info-content {
+  margin-top: auto;
+  margin-bottom: auto;
+
+  max-width: 450px;
+}
+
+.login-info-content h1 {
+  margin: 15px 0;
+
+  font-size: 42px;
+  line-height: 1.15;
+
+  font-weight: 700;
+}
+
+.login-info-content h1 span {
+  color: #00a3e0;
+}
+
+.login-info-content > p {
+  margin-bottom: 30px;
+
+  color: #999;
+
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+
+/* ========================================
+   LOGIN FEATURES
+======================================== */
+
+.login-feature {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 15px;
+
+  color: #cfcfcf;
+
+  font-size: 14px;
+}
+
+.login-feature i {
+  color: #00a3e0;
+  font-size: 16px;
+}
+
+
+/* ========================================
+   LOGIN FORM AREA
+======================================== */
+
+.login-form-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 50px;
+
+  background: #101010;
+}
+
+.login-form-card {
+  width: 100%;
+  max-width: 420px;
+}
+
+
+/* ========================================
+   LOGIN FORM HEADER
+======================================== */
+
+.login-form-header {
+  margin-bottom: 30px;
+}
+
+.login-form-header h1 {
+  margin: 0 0 8px;
+
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.login-form-header p {
+  margin: 0;
+
+  color: #888;
+
+  font-size: 14px;
+}
+
+
+/* ========================================
+   MOBILE LOGIN ICON
+======================================== */
+
+.mobile-login-icon {
+  display: none;
+}
+
+
+/* ========================================
+   LOGIN ERROR
+======================================== */
+
+.login-error {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 12px 15px;
+
+  margin-bottom: 20px;
+
+  color: #ff6b73;
+
+  background: rgba(231, 34, 46, 0.08);
+
+  border: 1px solid rgba(231, 34, 46, 0.2);
+
+  border-radius: 8px;
+
+  font-size: 13px;
+}
+
+
+/* ========================================
+   LOGIN INPUT GROUP
+======================================== */
+
+.login-input-group {
+  margin-bottom: 20px;
+}
+
+.login-input-group label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #b5b5b5;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+
+/* ========================================
+   PASSWORD LABEL
+======================================== */
+
+.password-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.password-label-row label {
+  margin-bottom: 8px;
+}
+
+.forgot-password {
+  padding: 0;
+
+  background: none;
+
+  border: none;
+
+  color: #00a3e0;
+
+  font-size: 12px;
+
+  cursor: pointer;
+}
+
+.forgot-password:hover {
+  color: #33b9ea;
+}
+
+
+/* ========================================
+   LOGIN INPUT
+======================================== */
+
+.login-input-wrapper {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+}
+
+.login-input-wrapper > i {
+  position: absolute;
+  left: 15px;
+
+  color: #666;
+
+  font-size: 16px;
+
+  pointer-events: none;
+}
+
+.login-input-wrapper input {
+  width: 100%;
+
+  height: 48px;
+
+  padding: 0 45px;
+
+  background: #080808 !important;
+
+  color: #e5e5e5 !important;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  border-radius: 8px;
+
+  outline: none;
+
+  font-size: 13px;
+
+  transition: 0.2s;
+}
+
+.login-input-wrapper input::placeholder {
+  color: #555;
+}
+
+.login-input-wrapper input:focus {
+  border-color: #00a3e0;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(0, 163, 224, 0.1);
+}
+
+
+/* ========================================
+   PASSWORD TOGGLE
+======================================== */
+
+.password-toggle {
+  position: absolute;
+
+  right: 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  background: none;
+
+  border: none;
+
+  color: #666;
+
+  cursor: pointer;
+}
+
+.password-toggle:hover {
+  color: #00a3e0;
+}
+
+
+/* ========================================
+   REMEMBER ME
+======================================== */
+
+.remember-me {
+  margin: 5px 0 25px;
+}
+
+.remember-me label {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  color: #888;
+
+  font-size: 13px;
+
+  cursor: pointer;
+}
+
+.remember-me input {
+  width: 15px;
+  height: 15px;
+
+  accent-color: #00a3e0;
+
+  cursor: pointer;
+}
+
+
+/* ========================================
+   LOGIN BUTTON
+======================================== */
+
+.login-submit-btn {
+  width: 100%;
+
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0066b3,
+      #00a3e0
+    );
+
+  color: white;
+
+  border: none;
+
+  border-radius: 8px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+.login-submit-btn:hover {
+  color: white;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 25px
+    rgba(0, 163, 224, 0.2);
+}
+
+
+/* ========================================
+   REGISTER
+======================================== */
+
+.login-register {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+
+  margin-top: 25px;
+
+  color: #777;
+
+  font-size: 13px;
+}
+
+.login-register a {
+  color: #00a3e0;
+
+  font-weight: 600;
+
+  text-decoration: none;
+}
+
+.login-register a:hover {
+  color: #33b9ea;
+}
+
+
+/* ========================================
+   BACK HOME
+======================================== */
+
+.login-back-home {
+  display: block;
+
+  margin-top: 25px;
+
+  color: #666;
+
+  text-align: center;
+
+  font-size: 13px;
+
+  text-decoration: none;
+
+  transition: 0.2s;
+}
+
+.login-back-home:hover {
+  color: #00a3e0;
+}
+
+
+/* ========================================
+   LOGIN MOBILE
+======================================== */
+
+@media (max-width: 900px) {
+
+  .login-container {
+    grid-template-columns: 1fr;
+    max-width: 550px;
+  }
+
+  .login-info {
+    display: none;
+  }
+
+  .login-form-wrapper {
+    padding: 40px 30px;
+  }
+
+  .mobile-login-icon {
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 20px;
+
+    background:
+      linear-gradient(
+        135deg,
+        #0066b3,
+        #00a3e0
+      );
+
+    color: white;
+
+    border-radius: 12px;
+
+    font-size: 24px;
+  }
+
+}
+
+
+@media (max-width: 576px) {
+
+  .login-page {
+    min-height: 100vh;
+
+    padding: 20px 15px;
+  }
+
+  .login-container {
+    border-radius: 15px;
+  }
+
+  .login-form-wrapper {
+    padding: 35px 20px;
+  }
+
+  .login-form-header h1 {
+    font-size: 26px;
+  }
+
+  .password-label-row {
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+}
+
+/* ========================================
+   REGISTER PAGE
+======================================== */
+
+.register-page {
+  min-height: calc(100vh - 80px);
+  background: #080808;
+  display: flex;
+  align-items: center;
+  padding: 50px 20px;
+}
+
+.register-container {
+  width: 100%;
+  max-width: 1100px;
+  min-height: 700px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  background: #0d0d0d;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+
+  overflow: hidden;
+
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+
+/* ========================================
+   LEFT SIDE
+======================================== */
+
+.register-info {
+  padding: 50px;
+
+  display: flex;
+  flex-direction: column;
+
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(0, 163, 224, 0.12),
+      transparent 35%
+    ),
+    #0d0d0d;
+}
+
+
+/* ========================================
+   BRAND
+======================================== */
+
+.register-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+
+  width: fit-content;
+
+  color: white;
+  text-decoration: none;
+}
+
+.register-brand:hover {
+  color: white;
+}
+
+.register-brand .brand-icon {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0066b3,
+      #00a3e0
+    );
+
+  color: white;
+
+  border-radius: 12px;
+
+  font-size: 22px;
+}
+
+.register-brand h2 {
+  margin: 0;
+
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.register-brand span {
+  display: block;
+
+  margin-top: 2px;
+
+  color: #777;
+
+  font-size: 11px;
+}
+
+
+/* ========================================
+   INFO CONTENT
+======================================== */
+
+.register-info-content {
+  max-width: 450px;
+
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.register-info-content h1 {
+  margin: 15px 0;
+
+  font-size: 42px;
+  line-height: 1.15;
+
+  font-weight: 700;
+}
+
+.register-info-content h1 span {
+  color: #00a3e0;
+}
+
+.register-info-content > p {
+  margin-bottom: 30px;
+
+  color: #999;
+
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+
+/* ========================================
+   FEATURES
+======================================== */
+
+.register-feature {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 15px;
+
+  color: #cfcfcf;
+
+  font-size: 14px;
+}
+
+.register-feature i {
+  color: #00a3e0;
+  font-size: 16px;
+}
+
+
+/* ========================================
+   FORM AREA
+======================================== */
+
+.register-form-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 50px;
+
+  background: #101010;
+}
+
+.register-form-card {
+  width: 100%;
+  max-width: 420px;
+}
+
+
+/* ========================================
+   FORM HEADER
+======================================== */
+
+.register-form-header {
+  margin-bottom: 25px;
+}
+
+.register-form-header h1 {
+  margin: 0 0 8px;
+
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.register-form-header p {
+  margin: 0;
+
+  color: #888;
+
+  font-size: 14px;
+}
+
+
+/* ========================================
+   MOBILE ICON
+======================================== */
+
+.mobile-register-icon {
+  display: none;
+}
+
+
+/* ========================================
+   ERROR
+======================================== */
+
+.register-error {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 12px 15px;
+
+  margin-bottom: 20px;
+
+  color: #ff6b73;
+
+  background: rgba(231, 34, 46, 0.08);
+
+  border: 1px solid rgba(231, 34, 46, 0.2);
+
+  border-radius: 8px;
+
+  font-size: 13px;
+}
+
+
+/* ========================================
+   INPUT GROUP
+======================================== */
+
+.register-input-group {
+  margin-bottom: 17px;
+}
+
+.register-input-group label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #b5b5b5;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+
+/* ========================================
+   INPUT WRAPPER
+======================================== */
+
+.register-input-wrapper {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+}
+
+.register-input-wrapper > i {
+  position: absolute;
+  left: 15px;
+
+  color: #666;
+
+  pointer-events: none;
+}
+
+.register-input-wrapper input {
+  width: 100%;
+  height: 46px;
+
+  padding: 0 45px;
+
+  background: #080808 !important;
+
+  color: #e5e5e5 !important;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  border-radius: 8px;
+
+  outline: none;
+
+  font-size: 13px;
+
+  transition: 0.2s;
+}
+
+.register-input-wrapper input::placeholder {
+  color: #555;
+}
+
+.register-input-wrapper input:focus {
+  border-color: #00a3e0;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(0, 163, 224, 0.1);
+}
+
+
+/* ========================================
+   PASSWORD TOGGLE
+======================================== */
+
+.register-password-toggle {
+  position: absolute;
+
+  right: 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  background: none;
+
+  border: none;
+
+  color: #666;
+
+  cursor: pointer;
+}
+
+.register-password-toggle:hover {
+  color: #00a3e0;
+}
+
+
+/* ========================================
+   TERMS
+======================================== */
+
+.register-terms {
+  margin: 5px 0 20px;
+}
+
+.register-terms label {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  color: #888;
+
+  font-size: 12px;
+
+  cursor: pointer;
+}
+
+.register-terms input {
+  width: 15px;
+  height: 15px;
+
+  accent-color: #00a3e0;
+
+  cursor: pointer;
+}
+
+
+/* ========================================
+   REGISTER BUTTON
+======================================== */
+
+.register-submit-btn {
+  width: 100%;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0066b3,
+      #00a3e0
+    );
+
+  color: white;
+
+  border: none;
+
+  border-radius: 8px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+.register-submit-btn:hover {
+  color: white;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 25px
+    rgba(0, 163, 224, 0.2);
+}
+
+
+/* ========================================
+   LOGIN LINK
+======================================== */
+
+.register-login {
+  display: flex;
+  justify-content: center;
+
+  gap: 5px;
+
+  margin-top: 22px;
+
+  color: #777;
+
+  font-size: 13px;
+}
+
+.register-login a {
+  color: #00a3e0;
+
+  font-weight: 600;
+
+  text-decoration: none;
+}
+
+.register-login a:hover {
+  color: #33b9ea;
+}
+
+/* =========================================
+   AUTOCARE REGISTER LOGO
+========================================= */
+
+.register-logo {
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.register-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+
+/* ========================================
+   BACK HOME
+======================================== */
+
+.register-back-home {
+  display: block;
+
+  margin-top: 20px;
+
+  color: #666;
+
+  text-align: center;
+
+  font-size: 13px;
+
+  text-decoration: none;
+}
+
+.register-back-home:hover {
+  color: #00a3e0;
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 900px) {
+
+  .register-container {
+    grid-template-columns: 1fr;
+
+    max-width: 550px;
+  }
+
+  .register-info {
+    display: none;
+  }
+
+  .register-form-wrapper {
+    padding: 40px 30px;
+  }
+
+  .mobile-register-icon {
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 20px;
+
+    background:
+      linear-gradient(
+        135deg,
+        #0066b3,
+        #00a3e0
+      );
+
+    color: white;
+
+    border-radius: 12px;
+
+    font-size: 24px;
+  }
+
+}
+
+
+@media (max-width: 576px) {
+
+  .register-page {
+    min-height: 100vh;
+
+    padding: 20px 15px;
+  }
+
+  .register-container {
+    border-radius: 15px;
+  }
+
+  .register-form-wrapper {
+    padding: 35px 20px;
+  }
+
+  .register-form-header h1 {
+    font-size: 26px;
+  }
+
+}
+
+/* ========================================
+   REMOVE BROWSER AUTOFILL WHITE BACKGROUND
+======================================== */
+
+.register-form input:-webkit-autofill,
+.register-form input:-webkit-autofill:hover,
+.register-form input:-webkit-autofill:focus,
+.register-form input:-webkit-autofill:active {
+  -webkit-text-fill-color: #e5e5e5;
+  -webkit-box-shadow: 0 0 0 1000px #080808 inset;
+  box-shadow: 0 0 0 1000px #080808 inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.vehicle-edit-btn {
+  background: linear-gradient(135deg, #0066b3, #00a3e0);
+  color: #000;
+  border: none;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.vehicle-edit-btn:hover {
+  background: linear-gradient(135deg, #0066b3, #00a3e0);
+  color: #000;
+}
+
+.vehicle-edit-btn {
+    background: #0d6efd;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.vehicle-edit-btn:hover {
+    background: #0b5ed7;
+    color: white;
+}
+
+.vehicle-card-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.vehicle-card-actions .btn {
+    flex: 1;
+}
+
+
+/* ========================================
+   ADMIN DASHBOARD
+======================================== */
+
+.admin-stat-card {
+  background: #111;
+  border: 1px solid #2a2a2a;
+  border-radius: 14px;
+  padding: 22px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  height: 100%;
+}
+
+.admin-stat-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1d1d1d;
+  font-size: 22px;
+}
+
+.admin-stat-card span {
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: #999;
+}
+
+.admin-stat-card h2 {
+  margin: 4px 0 0;
+  font-size: 30px;
+  color: #fff;
+}
+
+.admin-booking-card {
+  background: #111;
+  border: 1px solid #2a2a2a;
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 18px;
+}
+
+.admin-booking-card h3 {
+  margin-bottom: 18px;
+}
+
+.admin-booking-card p {
+  margin-bottom: 8px;
+}
+
+.navbar-username {
+  font-size: 12px;
+  font-weight: 500;
+  margin-top: 2px;
+  opacity: 0.85;
+}
+
+/* ========================================
+   BOOKINGS PAGE
+   ======================================== */
+
+.bookings-page {
+  min-height: 100vh;
+  background: #030303;
+  color: #ffffff;
+}
+
+.bookings-page .container {
+  max-width: 1200px;
+}
+
+.bookings-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 30px;
+  margin-bottom: 35px;
+}
+
+.bookings-header h1 {
+  margin: 8px 0 10px;
+  font-size: 42px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.bookings-header p {
+  margin: 0;
+  color: #888888;
+  font-size: 16px;
+}
+
+/* NEW BOOKING BUTTON */
+
+.booking-new-btn {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 22px !important;
+  min-height: 46px;
+  background: linear-gradient(135deg, #00a3e0, #0088c7) !important;
+  color: #ffffff !important;
+  border: 1px solid #00a3e0 !important;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none !important;
+  cursor: pointer;
+  box-shadow: 0 5px 20px rgba(0, 163, 224, 0.18);
+}
+
+.booking-new-btn:hover {
+  background: linear-gradient(135deg, #08b5f0, #0096d6) !important;
+  color: #ffffff !important;
+  transform: translateY(-1px);
+}
+
+/* FILTERS */
+
+.booking-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.booking-filter {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 16px;
+  background: rgba(255, 255, 255, 0.04);
+  color: #aaaaaa;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.booking-filter span {
+  min-width: 22px;
+  padding: 2px 6px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  font-size: 11px;
+  text-align: center;
+}
+
+.booking-filter:hover,
+.booking-filter.active {
+  background: rgba(0, 163, 224, 0.12);
+  border-color: #00a3e0;
+  color: #00a3e0;
+}
+
+/* EMPTY STATE */
+
+.empty-bookings-card {
+  padding: 65px 30px;
+  margin-top: 25px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+}
+
+.empty-bookings-icon {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(0, 163, 224, 0.10);
+  color: #00a3e0;
+  font-size: 30px;
+}
+
+.empty-bookings-card h2 {
+  margin-bottom: 10px;
+  color: #ffffff;
+  font-size: 28px;
+}
+
+.empty-bookings-card p {
+  max-width: 650px;
+  margin: 0 auto 25px;
+  color: #888888;
+  line-height: 1.7;
+}
+
+/* BOOKING LIST */
+
+.bookings-list {
+  display: grid;
+  gap: 25px;
+}
+
+.booking-card {
+  padding: 28px;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  transition: 0.2s ease;
+}
+
+.booking-card:hover {
+  border-color: rgba(0, 163, 224, 0.35);
+  transform: translateY(-2px);
+}
+
+.booking-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+.booking-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 163, 224, 0.10);
+  color: #00a3e0;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+.booking-status {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 13px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.booking-status.upcoming {
+  color: #00a3e0;
+  background: rgba(0, 163, 224, 0.12);
+}
+
+.booking-status.confirmed {
+  color: #35c759;
+  background: rgba(53, 199, 89, 0.12);
+}
+
+.booking-status.completed {
+  color: #35c759;
+  background: rgba(53, 199, 89, 0.12);
+}
+
+.booking-status.cancelled {
+  color: #ff5252;
+  background: rgba(255, 82, 82, 0.12);
+}
+
+/* BOOKING INFO */
+
+.booking-info {
+  margin-bottom: 22px;
+}
+
+.booking-info h2 {
+  margin: 7px 0 5px;
+  color: #ffffff;
+  font-size: 25px;
+}
+
+.booking-info p {
+  margin: 0;
+  color: #888888;
+}
+
+/* REFERENCE */
+
+.booking-reference {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  margin-bottom: 22px;
+  background: rgba(255, 255, 255, 0.035);
+  border-radius: 8px;
+}
+
+.booking-reference span {
+  color: #777777;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.booking-reference strong {
+  color: #00a3e0;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+}
+
+/* DETAILS */
+
+.booking-details {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  padding: 20px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.booking-detail-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.booking-detail-item > i {
+  margin-top: 2px;
+  color: #00a3e0;
+  font-size: 18px;
+}
+
+.booking-detail-item span {
+  display: block;
+  margin-bottom: 4px;
+  color: #666666;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.booking-detail-item strong {
+  display: block;
+  color: #dddddd;
+  font-size: 13px;
+}
+
+/* NOTES */
+
+.booking-notes {
+  padding: 16px;
+  margin-top: 18px;
+  background: rgba(255, 255, 255, 0.035);
+  border-radius: 8px;
+}
+
+.booking-notes span {
+  color: #777777;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.booking-notes p {
+  margin: 8px 0 0;
+  color: #cccccc;
+  line-height: 1.6;
+}
+
+/* ACTION BUTTONS */
+
+.booking-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.booking-card-actions .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 9px 16px;
+  border-radius: 7px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.booking-view-btn {
+  background: transparent !important;
+  color: #cccccc !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  text-decoration: none !important;
+}
+
+.booking-view-btn:hover {
+  color: #00a3e0 !important;
+  border-color: #00a3e0 !important;
+}
+
+.booking-complete-btn {
+  background: rgba(53, 199, 89, 0.12) !important;
+  color: #35c759 !important;
+  border: 1px solid rgba(53, 199, 89, 0.35) !important;
+}
+
+.booking-complete-btn:hover {
+  background: #35c759 !important;
+  color: #ffffff !important;
+}
+
+.booking-cancel-btn {
+  background: rgba(255, 82, 82, 0.10) !important;
+  color: #ff5252 !important;
+  border: 1px solid rgba(255, 82, 82, 0.3) !important;
+}
+
+.booking-cancel-btn:hover {
+  background: #ff5252 !important;
+  color: #ffffff !important;
+}
+
+/* MODAL */
+
+.booking-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.booking-modal {
+  width: 100%;
+  max-width: 650px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 28px;
+  background: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 18px;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.6);
+}
+
+.booking-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.booking-modal-header h2 {
+  margin: 7px 0 0;
+  color: #ffffff;
+}
+
+.booking-modal-close {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: #888888;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.booking-modal-close:hover {
+  color: #ffffff;
+  border-color: #00a3e0;
+}
+
+.booking-modal-status {
+  padding: 20px 0;
+}
+
+.booking-modal-status p {
+  color: #888888;
+  margin-bottom: 0;
+}
+
+.booking-modal-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.modal-detail {
+  display: flex;
+  gap: 12px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.035);
+  border-radius: 8px;
+}
+
+.modal-detail > i {
+  color: #00a3e0;
+  font-size: 18px;
+}
+
+.modal-detail span {
+  display: block;
+  color: #666666;
+  font-size: 10px;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+
+.modal-detail strong {
+  color: #dddddd;
+  font-size: 13px;
+}
+
+.modal-notes {
+  margin-top: 20px;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.035);
+  border-radius: 8px;
+}
+
+.modal-notes span {
+  color: #777777;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.modal-notes p {
+  margin: 8px 0 0;
+  color: #cccccc;
+  line-height: 1.6;
+}
+
+.booking-modal-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+  .bookings-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .bookings-header h1 {
+    font-size: 34px;
+  }
+
+  .booking-details {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .booking-reference {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .booking-card-actions .btn {
+    width: 100%;
+  }
+
+  .booking-modal-details {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .booking-details {
+    grid-template-columns: 1fr;
+  }
+
+  .empty-bookings-card {
+    padding: 45px 20px;
+  }
+}
+
+/* ================================
+   FIX NAVBAR & HERO BUTTONS
+   ================================ */
+
+/* Navbar links */
+.navbar a,
+.navbar-nav a,
+nav a {
+  color: #b8b8b8 !important;
+  text-decoration: none;
+}
+
+.navbar a:hover,
+.navbar-nav a:hover,
+nav a:hover {
+  color: #00bfff !important;
+}
+
+/* Login button/link */
+.login-btn,
+.login-link {
+  color: #b8b8b8 !important;
+  background: transparent;
+  text-decoration: none;
+}
+
+.login-btn:hover,
+.login-link:hover {
+  color: #00bfff !important;
+}
+
+/* Hero secondary button - Explore Services */
+.explore-btn,
+.secondary-btn {
+  color: #d0d0d0 !important;
+  background: transparent !important;
+  border: none;
+  text-decoration: none;
+}
+
+.explore-btn:hover,
+.secondary-btn:hover {
+  color: #00bfff !important;
+}
+
+/* Make sure button text/icons are visible */
+button,
+.btn,
+a.btn {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Primary Book a Service button */
+.book-service-btn {
+  color: #ffffff !important;
+  background: #009fe3 !important;
+  border: none;
+}
+
+.book-service-btn:hover {
+  background: #00b8ff !important;
+  color: #ffffff !important;
+}
+
+/* =====================================================
+   FINAL HERO TEXT VISIBILITY FIX
+   ===================================================== */
+
+/* Main hero heading - "Take Better" */
+.hero h1 {
+  color: #ffffff !important;
+}
+
+/* Gradient part - "Care of Your Car." */
+.hero h1 strong {
+  background: linear-gradient(
+    90deg,
+    #008cff 0%,
+    #00bfff 45%,
+    #ff3040 100%
+  ) !important;
+
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+/* Explore Services */
+.hero-secondary-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.hero-secondary-btn:hover {
+  color: #00bfff !important;
+  border-color: #00bfff !important;
+}
+
+/* Vehicle card heading */
+.hero-info-card h3 {
+  color: #ffffff !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Vehicle card description */
+.hero-info-card p {
+  color: #b8b8b8 !important;
+  opacity: 1 !important;
+}
+
+/* Card header */
+.info-card-header {
+  color: #b8b8b8 !important;
+}
+
+/* Vehicle status text */
+.vehicle-status small {
+  color: #a0a0a0 !important;
+}
+
+.vehicle-status strong {
+  color: #ffffff !important;
+}
+
+/* Make all hero links visible */
+.hero a {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Hero buttons text */
+.hero-primary-btn {
+  color: #ffffff !important;
+}
+
+.hero-primary-btn i {
+  color: #ffffff !important;
+}
+
+
+/* =========================================================
+   GLOBAL TEXT COLOR FIX
+   Prevent Bootstrap from overriding AutoCare dark theme
+   ========================================================= */
+
+html,
+body,
+#root {
+  background: #030303 !important;
+  color: #ffffff !important;
+}
+
+/* All headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #ffffff !important;
+}
+
+/* Normal text */
+p {
+  color: #b8b8b8;
+}
+
+/* Links */
+a {
+  color: inherit;
+}
+
+/* =========================================================
+   HOME PAGE
+   ========================================================= */
+
+.hero h1 {
+  color: #ffffff !important;
+}
+
+.hero-secondary-btn {
+  color: #ffffff !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.hero-info-card h3 {
+  color: #ffffff !important;
+}
+
+.hero-info-card p {
+  color: #b8b8b8 !important;
+}
+
+/* =========================================================
+   MY VEHICLES
+   ========================================================= */
+
+.vehicles-header h1 {
+  color: #ffffff !important;
+}
+
+.add-vehicle-card h3 {
+  color: #ffffff !important;
+}
+
+.add-vehicle-card p {
+  color: #999999 !important;
+}
+
+.add-vehicle-outline {
+  color: #00a3e0 !important;
+  border-color: #00a3e0 !important;
+  background: transparent !important;
+}
+
+.add-vehicle-outline:hover {
+  color: #ffffff !important;
+}
+
+/* Vehicle card headings */
+.vehicle-card h2,
+.vehicle-card h3 {
+  color: #ffffff !important;
+}
+
+/* Vehicle buttons */
+.vehicle-book-btn {
+  color: #ffffff !important;
+}
+
+.vehicle-view-btn {
+  color: #d4d4d4 !important;
+}
+
+/* =========================================================
+   LOGIN PAGE
+   ========================================================= */
+
+.login-info-content h1 {
+  color: #ffffff !important;
+}
+
+.login-info-content h1 span {
+  color: #00a3e0 !important;
+}
+
+.login-info-content > p {
+  color: #999999 !important;
+}
+
+.login-form-header h1 {
+  color: #ffffff !important;
+}
+
+.login-form-header p {
+  color: #999999 !important;
+}
+
+.login-feature {
+  color: #cfcfcf !important;
+}
+
+/* Login button */
+.login-submit-btn {
+  color: #ffffff !important;
+}
+
+/* =========================================================
+   ALL BUTTONS
+   ========================================================= */
+
+button {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.btn {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Don't allow Bootstrap's dark text to override these */
+.btn-primary,
+.btn-secondary,
+.btn-outline-primary {
+  color: #ffffff !important;
+}
+
+/* =====================================================
+   AUTOCARE FORGOT PASSWORD MODAL
+===================================================== */
+
+.forgot-modal-overlay {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.78);
+
+  backdrop-filter: blur(6px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
+
+  z-index: 9999;
+}
+
+
+/* ================================
+   MODAL
+================================ */
+
+.forgot-modal {
+  width: 100%;
+  max-width: 450px;
+
+  background: #07141c;
+
+  border: 1px solid rgba(0, 174, 239, 0.25);
+
+  border-radius: 20px;
+
+  padding: 35px;
+
+  position: relative;
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.65),
+    0 0 35px rgba(0, 174, 239, 0.08);
+
+  animation: forgotModalOpen 0.25s ease;
+}
+
+
+@keyframes forgotModalOpen {
+
+  from {
+    opacity: 0;
+    transform: translateY(15px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+}
+
+
+/* ================================
+   CLOSE BUTTON
+================================ */
+
+.forgot-modal-close {
+  position: absolute;
+
+  top: 15px;
+  right: 15px;
+
+  width: 38px;
+  height: 38px;
+
+  border: none;
+
+  background: transparent;
+
+  color: #8c9aa3;
+
+  font-size: 19px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+
+.forgot-modal-close:hover {
+  color: #00aeef;
+
+  background: rgba(0, 174, 239, 0.1);
+
+  transform: rotate(90deg);
+}
+
+
+.forgot-modal-close:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+
+/* ================================
+   ICON
+================================ */
+
+.forgot-modal-icon {
+  width: 62px;
+  height: 62px;
+
+  margin: 0 auto 18px;
+
+  border-radius: 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(
+    135deg,
+    #0077b6,
+    #00aeef
+  );
+
+  color: white;
+
+  font-size: 27px;
+
+  box-shadow:
+    0 8px 25px rgba(0, 174, 239, 0.25);
+}
+
+
+/* ================================
+   HEADER
+================================ */
+
+.forgot-modal-header {
+  text-align: center;
+
+  margin-bottom: 25px;
+}
+
+
+.forgot-modal-header h2 {
+  margin: 0 0 8px;
+
+  color: #ffffff;
+
+  font-size: 26px;
+
+  font-weight: 700;
+}
+
+
+.forgot-modal-header p {
+  margin: 0;
+
+  color: #8e9aa3;
+
+  font-size: 14px;
+}
+
+
+/* ================================
+   SUCCESS
+================================ */
+
+.forgot-success {
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 12px 14px;
+
+  margin-bottom: 18px;
+
+  border-radius: 9px;
+
+  background: rgba(25, 135, 84, 0.12);
+
+  border: 1px solid rgba(25, 135, 84, 0.25);
+
+  color: #55d98b;
+
+  font-size: 14px;
+}
+
+
+.forgot-success i {
+  font-size: 17px;
+}
+
+
+/* ================================
+   ERROR
+================================ */
+
+.forgot-error {
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 12px 14px;
+
+  margin-bottom: 18px;
+
+  border-radius: 9px;
+
+  background: rgba(220, 53, 69, 0.1);
+
+  border: 1px solid rgba(220, 53, 69, 0.25);
+
+  color: #ff6b7a;
+
+  font-size: 14px;
+}
+
+
+.forgot-error i {
+  font-size: 17px;
+}
+
+
+/* ================================
+   LABEL
+================================ */
+
+.forgot-step label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #c7d0d5;
+
+  font-size: 14px;
+
+  font-weight: 500;
+}
+
+
+/* ================================
+   INPUT WRAPPER
+================================ */
+
+.forgot-input-wrapper {
+  position: relative;
+
+  width: 100%;
+}
+
+
+.forgot-input-wrapper > i {
+  position: absolute;
+
+  left: 15px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: #00aeef;
+
+  font-size: 17px;
+
+  pointer-events: none;
+
+  z-index: 2;
+}
+
+
+/* ================================
+   INPUT
+================================ */
+
+.forgot-input-wrapper input {
+  width: 100%;
+
+  height: 52px;
+
+  box-sizing: border-box;
+
+  padding: 0 15px 0 45px;
+
+  border-radius: 10px;
+
+  border: 1px solid #263943;
+
+  background: #0d202a;
+
+  color: #ffffff;
+
+  font-size: 15px;
+
+  outline: none;
+
+  transition: all 0.2s ease;
+}
+
+
+.forgot-input-wrapper input::placeholder {
+  color: #71808a;
+}
+
+
+.forgot-input-wrapper input:focus {
+  border-color: #00aeef;
+
+  background: #0e242f;
+
+  box-shadow:
+    0 0 0 3px rgba(0, 174, 239, 0.12);
+}
+
+
+/* ================================
+   OTP
+================================ */
+
+.otp-input {
+  text-align: center;
+
+  letter-spacing: 7px;
+
+  font-size: 20px !important;
+
+  font-weight: 600;
+}
+
+
+/* ================================
+   CONFIRM PASSWORD
+================================ */
+
+.forgot-confirm-label {
+  margin-top: 18px !important;
+}
+
+
+/* ================================
+   SEND / VERIFY / RESET BUTTON
+================================ */
+
+.forgot-submit-btn {
+  width: 100%;
+
+  height: 52px;
+
+  margin-top: 20px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  background: linear-gradient(
+    135deg,
+    #0077b6,
+    #00aeef
+  );
+
+  color: #ffffff;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 9px;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+
+.forgot-submit-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 8px 22px rgba(0, 174, 239, 0.25);
+}
+
+
+.forgot-submit-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+
+.forgot-submit-btn:disabled {
+  opacity: 0.65;
+
+  cursor: not-allowed;
+}
+
+
+/* ================================
+   LOADING SPINNER
+================================ */
+
+.forgot-spinner {
+  width: 16px;
+  height: 16px;
+
+  border: 2px solid rgba(255, 255, 255, 0.35);
+
+  border-top-color: #ffffff;
+
+  border-radius: 50%;
+
+  animation: forgotSpin 0.7s linear infinite;
+}
+
+
+@keyframes forgotSpin {
+
+  to {
+    transform: rotate(360deg);
+  }
+
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 500px) {
+
+  .forgot-modal {
+    padding: 28px 22px;
+
+    border-radius: 16px;
+  }
+
+  .forgot-modal-icon {
+    width: 55px;
+    height: 55px;
+
+    font-size: 23px;
+  }
+
+  .forgot-modal-header h2 {
+    font-size: 23px;
+  }
+
+}
+
+/* =========================================
+   LOGIN INPUT - DARK THEME FIX
+========================================= */
+
+.login-input-wrapper input {
+  background: #0b0b0b !important;
+  color: #ffffff !important;
+  border: 1px solid #252525 !important;
+}
+
+/* When typing / focusing */
+.login-input-wrapper input:focus {
+  background: #0b0b0b !important;
+  color: #ffffff !important;
+  border-color: #00aeef !important;
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(0, 174, 239, 0.12) !important;
+}
+
+/* Placeholder */
+.login-input-wrapper input::placeholder {
+  color: #777777 !important;
+}
+
+/* Email autofill / browser remembered email */
+.login-input-wrapper input:-webkit-autofill,
+.login-input-wrapper input:-webkit-autofill:hover,
+.login-input-wrapper input:-webkit-autofill:focus,
+.login-input-wrapper input:-webkit-autofill:active {
+  -webkit-text-fill-color: #ffffff !important;
+
+  -webkit-box-shadow: 0 0 0 1000px #0b0b0b inset !important;
+
+  box-shadow: 0 0 0 1000px #0b0b0b inset !important;
+
+  background-color: #0b0b0b !important;
+
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* =========================================
+   BOOKING STATUS MESSAGE
+========================================= */
+
+.booking-status-message {
+  background: #111111 !important;
+  color: #e8e8e8 !important;
+  border: 1px solid #252525 !important;
+  border-left: 4px solid #00aeef !important;
+  border-radius: 10px !important;
+  padding: 15px 18px !important;
+  margin: 20px 0 !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  box-shadow: none !important;
+}
+
+/* Confirmed message */
+.booking-status-message.confirmed {
+  border-left-color: #00d084 !important;
+  color: #e8e8e8 !important;
+}
+
+/* Pending message */
+.booking-status-message.pending {
+  border-left-color: #ffc107 !important;
+}
+
+/* Cancelled / rejected */
+.booking-status-message.cancelled,
+.booking-status-message.rejected {
+  border-left-color: #ff4d4d !important;
+}
+
+
+
+
+
+/* =========================================
+   MOBILE NAVBAR
+========================================= */
+
+/* =========================================
+   MOBILE NAVBAR
+========================================= */
+
+@media (max-width: 991px) {
+
+  /* Navbar */
+  .autocare-navbar {
+    padding: 10px 0;
+  }
+
+  .autocare-navbar .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+
+  /* ================================
+     BRAND
+  ================================= */
+
+  .navbar-brand {
+    text-decoration: none !important;
+    max-width: calc(100% - 55px);
+  }
+
+  .autocare-logo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+  }
+
+  .brand-name {
+    font-size: 19px;
+  }
+
+  .brand-tagline {
+    font-size: 10px;
+  }
+
+  .navbar-username {
+    font-size: 10px;
+  }
+
+
+  /* ================================
+     HAMBURGER
+  ================================= */
+
+  .navbar-toggler {
+    border: none !important;
+    padding: 6px;
+    box-shadow: none !important;
+  }
+
+  .navbar-toggler:focus {
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  .navbar-toggler-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+
+  /* ================================
+     MOBILE MENU
+  ================================= */
+
+  .navbar-collapse {
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+
+  /* ================================
+     NAV LINKS
+  ================================= */
+
+  .navbar-nav {
+    width: 100%;
+    margin: 0 !important;
+    gap: 3px;
+  }
+
+  .navbar-nav .nav-item {
+    width: 100%;
+  }
+
+  .navbar-nav .nav-link {
+    position: relative;
+
+    width: 100%;
+    padding: 11px 12px !important;
+
+    margin: 0 !important;
+
+    border-radius: 7px;
+
+    text-decoration: none !important;
+
+    border: none !important;
+    border-bottom: none !important;
+
+    box-shadow: none !important;
+
+    transition: background 0.2s ease;
+  }
+
+
+  /* Normal hover */
+
+  .navbar-nav .nav-link:hover {
+    background: rgba(255, 255, 255, 0.06);
+
+    text-decoration: none !important;
+
+    border: none !important;
+    border-bottom: none !important;
+
+    box-shadow: none !important;
+  }
+
+
+  /* ================================
+     ACTIVE PAGE
+  ================================= */
+
+  .navbar-nav .nav-link.active {
+    background: rgba(255, 255, 255, 0.08);
+
+    color: #ffffff !important;
+
+    text-decoration: none !important;
+
+    border: none !important;
+    border-bottom: none !important;
+
+    box-shadow: none !important;
+  }
+
+
+  /* Remove possible pseudo-element underline */
+
+  .navbar-nav .nav-link::before,
+  .navbar-nav .nav-link::after,
+  .navbar-nav .nav-link.active::before,
+  .navbar-nav .nav-link.active::after,
+  .navbar-nav .nav-link:hover::before,
+  .navbar-nav .nav-link:hover::after {
+    content: none !important;
+    display: none !important;
+  }
+
+
+  /* ================================
+     RIGHT SIDE BUTTONS
+  ================================= */
+
+  .navbar-right-buttons {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 9px;
+
+    margin-top: 14px;
+    padding-top: 14px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .navbar-right-buttons .btn {
+    width: 100%;
+    min-height: 42px;
+
+    text-align: center;
+
+    text-decoration: none !important;
+  }
+
+
+  /* Login */
+
+  .navbar-right-buttons .btn-login {
+    border: none !important;
+    background: transparent;
+  }
+
+
+  /* Book / Register */
+
+  .navbar-right-buttons .btn-book {
+    border-radius: 7px;
+  }
+
+}
+
+/* =========================================================
+   AUTOCARE - MOBILE HERO
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+  /* Hero overall */
+  .hero {
+  min-height: calc(100vh - 58px);
+  padding: 20px 0 30px;
+  background-position: 62% center;
+  display: flex;
+  align-items: flex-start;
+}
+
+  /* Container */
+  .hero .container {
+    padding-top: 20px;
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  /* Hide the desktop vehicle information card on mobile */
+  .hero .col-lg-5 {
+    display: none;
+  }
+
+  /* Hero content takes full width */
+  .hero .col-lg-7 {
+    width: 100%;
+  }
+
+  /* Badge */
+  .hero-badge {
+    font-size: 10px;
+    padding: 7px 11px;
+    gap: 6px;
+  }
+
+  .hero-badge span {
+    width: 6px;
+    height: 6px;
+  }
+
+  /* Main heading */
+  .hero h1 {
+    font-size: 40px !important;
+    line-height: 1.05;
+    letter-spacing: -2px;
+    margin-top: 16px;
+    margin-bottom: 0;
+  }
+
+  /* Description */
+  .hero p {
+    max-width: 100%;
+    font-size: 13.5px;
+    line-height: 1.65;
+    margin-top: 18px;
+  }
+
+  /* Buttons */
+  .hero-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    margin-top: 24px;
+  }
+
+  .hero-primary-btn,
+  .hero-secondary-btn {
+    width: 100%;
+    min-height: 46px;
+    padding: 11px 16px;
+    font-size: 13px;
+    justify-content: center;
+  }
+
+  /* Trust section */
+  .hero-trust {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 32px;
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+
+.trust-item i {
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.trust-item strong {
+  display: block;
+  font-size: 10px;
+}
+
+.trust-item small {
+  display: block;
+  font-size: 6.5px;
+  white-space: nowrap;
+}
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+  .hero {
+  min-height: calc(100vh - 58px);
+  padding-top: 40px;
+}
+
+  .hero h1 {
+    font-size: 38px !important;
+  }
+
+  .hero p {
+    font-size: 13px;
+  }
+
+  .hero-trust {
+    margin-top: 32px;
+  }
+
+  .trust-item i {
+    font-size: 17px;
+  }
+
+  .trust-item strong {
+    font-size: 9px;
+  }
+
+  .trust-item small {
+    font-size: 6.5px;
+  }
+}
+
+/* =========================================
+   SERVICES PAGE - MOBILE
+========================================= */
+
+@media (max-width: 767px) {
+
+  .services-page .container {
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
+  }
+
+  /* Header */
+
+  .services-header {
+    text-align: left;
+    margin-bottom: 25px;
+  }
+
+  .services-header h1 {
+    font-size: 28px;
+    line-height: 1.15;
+    margin-top: 8px;
+  }
+
+  .services-header p {
+    font-size: 13px;
+    line-height: 1.7;
+    margin-top: 10px;
+  }
+
+
+  /* Service grid */
+
+  .services-page .row {
+    margin-top: 15px !important;
+  }
+
+  .services-page .col-lg-4,
+  .services-page .col-md-6 {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+
+  /* Service card */
+
+  .service-card {
+    padding: 20px;
+    min-height: auto;
+    border-radius: 16px;
+  }
+
+
+  /* Icon */
+
+  .service-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 18px;
+  }
+
+  .service-icon i {
+    font-size: 20px;
+  }
+
+
+  /* Card content */
+
+  .service-card-content h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+
+  .service-card-content p {
+    font-size: 12px;
+    line-height: 1.7;
+    margin-bottom: 14px;
+  }
+
+  .service-price {
+    font-size: 13px;
+  }
+
+
+  /* Book button */
+
+  .service-book-btn {
+    width: 100%;
+    height: 38px;
+    font-size: 12px;
+    margin-top: 16px;
+  }
+
+
+  /* Bottom CTA */
+
+  .services-cta {
+    margin-top: 30px !important;
+    padding: 22px 18px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .services-cta h2 {
+    font-size: 20px;
+    line-height: 1.3;
+  }
+
+  .services-cta p {
+    font-size: 12px;
+    line-height: 1.7;
+  }
+
+  .service-cta-btn {
+    width: 100%;
+    height: 42px;
+    font-size: 12px;
+  }
+
+}
+
+/* =========================================
+   DASHBOARD - MOBILE RESPONSIVE
+========================================= */
+
+@media (max-width: 767px) {
+
+  /* Main dashboard container */
+  .dashboard-page .container {
+    padding-top: 28px !important;
+    padding-bottom: 30px !important;
+  }
+
+
+  /* =========================================
+     HEADER
+  ========================================= */
+
+  .dashboard-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  .dashboard-header h1 {
+    font-size: 28px;
+    line-height: 1.2;
+    margin-top: 6px;
+  }
+
+  .dashboard-header p {
+    font-size: 13px;
+    line-height: 1.7;
+    margin-top: 8px;
+    margin-bottom: 0;
+  }
+
+  .dashboard-book-btn {
+    width: 100%;
+    height: 42px;
+    font-size: 13px;
+  }
+
+
+  /* =========================================
+     STATISTICS CARDS
+  ========================================= */
+
+  .dashboard-page .row.g-4 {
+    --bs-gutter-x: 12px;
+    --bs-gutter-y: 12px;
+  }
+
+  .dashboard-stat-card {
+    padding: 16px;
+    min-height: 82px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .dashboard-stat-icon {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .dashboard-stat-icon i {
+    font-size: 18px;
+  }
+
+  .dashboard-stat-card span {
+    font-size: 9px;
+    letter-spacing: 0.5px;
+  }
+
+  .dashboard-stat-card h2 {
+    font-size: 24px;
+    margin: 3px 0 0;
+  }
+
+
+  /* =========================================
+     MAIN DASHBOARD CARDS
+  ========================================= */
+
+  .dashboard-card {
+    padding: 18px;
+    border-radius: 16px;
+  }
+
+  .dashboard-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .dashboard-card-header h3 {
+    font-size: 19px;
+    margin-top: 5px;
+  }
+
+  .dashboard-view-link {
+    font-size: 11px;
+    white-space: nowrap;
+  }
+
+
+  /* =========================================
+     VEHICLE LIST
+  ========================================= */
+
+  .dashboard-vehicle-list {
+    margin-top: 16px;
+  }
+
+  .dashboard-vehicle-item {
+    padding: 12px 10px;
+    gap: 10px;
+    border-radius: 12px;
+  }
+
+  .dashboard-vehicle-icon {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+  }
+
+  .dashboard-vehicle-icon i {
+    font-size: 17px;
+  }
+
+  .dashboard-vehicle-info {
+    min-width: 0;
+  }
+
+  .dashboard-vehicle-info h4 {
+    font-size: 13px;
+    margin-bottom: 3px;
+  }
+
+  .dashboard-vehicle-info p {
+    font-size: 10px;
+  }
+
+  .dashboard-vehicle-view {
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+  }
+
+
+  /* =========================================
+     RECENT BOOKINGS
+  ========================================= */
+
+  .dashboard-booking-list {
+    margin-top: 16px;
+  }
+
+  .dashboard-booking-item {
+    display: grid;
+    grid-template-columns: 38px 1fr auto;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 8px;
+  }
+
+  .dashboard-booking-icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .dashboard-booking-icon i {
+    font-size: 16px;
+  }
+
+  .dashboard-booking-info {
+    min-width: 0;
+  }
+
+  .dashboard-booking-info h4 {
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .dashboard-booking-info p {
+    font-size: 9px;
+    white-space: nowrap;
+  }
+
+  .dashboard-status {
+    font-size: 8px;
+    padding: 5px 7px;
+    white-space: nowrap;
+  }
+
+
+  /* =========================================
+     EMPTY STATES
+  ========================================= */
+
+  .dashboard-empty {
+    padding: 30px 15px;
+    text-align: center;
+  }
+
+  .dashboard-empty i {
+    font-size: 30px;
+  }
+
+  .dashboard-empty p {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  .dashboard-small-btn {
+    width: 100%;
+    height: 38px;
+    font-size: 11px;
+  }
+
+
+  /* =========================================
+     QUICK ACTIONS
+  ========================================= */
+
+  .dashboard-quick-actions {
+    margin-top: 16px !important;
+  }
+
+  .dashboard-action-card {
+    min-height: 68px;
+    padding: 13px;
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .dashboard-action-card > i:first-child {
+    font-size: 20px;
+    min-width: 25px;
+  }
+
+  .dashboard-action-card div {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .dashboard-action-card h4 {
+    font-size: 13px;
+    margin-bottom: 3px;
+  }
+
+  .dashboard-action-card p {
+    font-size: 10px;
+    margin: 0;
+  }
+
+  .dashboard-action-card > i:last-child {
+    font-size: 13px;
+  }
+
+
+  /* =========================================
+     BOOTSTRAP MOBILE COLUMNS
+  ========================================= */
+
+  .dashboard-page .col-lg-7,
+  .dashboard-page .col-lg-5 {
+    width: 100%;
+  }
+
+  .dashboard-page .col-lg-3 {
+    width: 50%;
+  }
+
+  .dashboard-page .col-md-4 {
+    width: 100%;
+  }
+
+}
+
+/* =========================================================
+   MOBILE RESPONSIVE - VEHICLES PAGE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  /* PAGE */
+  .vehicles-page {
+    overflow-x: hidden;
+  }
+
+  .vehicles-page .container {
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
+
+  /* HEADER */
+  .vehicles-header {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 20px;
+  }
+
+  .vehicles-header h1 {
+    font-size: 32px;
+    margin-bottom: 8px;
+  }
+
+  .vehicles-header p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .add-vehicle-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* ADD / EDIT FORM */
+  .add-vehicle-form {
+    padding: 20px !important;
+    border-radius: 16px;
+  }
+
+  .form-header {
+    gap: 15px;
+  }
+
+  .form-header h3 {
+    font-size: 20px;
+  }
+
+  .form-header > i {
+    font-size: 28px;
+  }
+
+  .add-vehicle-form .row {
+    --bs-gutter-x: 0;
+  }
+
+  .add-vehicle-form .col-md-6 {
+    width: 100%;
+  }
+
+  .add-vehicle-form label {
+    font-size: 13px;
+  }
+
+  .add-vehicle-form input,
+  .add-vehicle-form select {
+    width: 100%;
+    min-height: 46px;
+    font-size: 14px;
+  }
+
+  .form-actions {
+    flex-direction: column-reverse;
+    gap: 10px;
+  }
+
+  .form-actions button {
+    width: 100%;
+  }
+
+  /* VEHICLE CARD */
+  .vehicle-card {
+    padding: 20px !important;
+    border-radius: 18px;
+  }
+
+  .vehicle-card-top {
+    margin-bottom: 18px;
+  }
+
+  .large-vehicle-icon {
+    width: 52px;
+    height: 52px;
+  }
+
+  .large-vehicle-icon i {
+    font-size: 24px;
+  }
+
+  .vehicle-card-info h2 {
+    font-size: 22px;
+  }
+
+  .vehicle-card-info p {
+    font-size: 13px;
+  }
+
+  /* VEHICLE STATS */
+  .vehicle-stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .vehicle-stats > div {
+    min-width: 0;
+  }
+
+  .vehicle-stats span,
+  .vehicle-service-status span {
+    font-size: 10px;
+  }
+
+  .vehicle-stats strong {
+    font-size: 13px;
+    word-break: break-word;
+  }
+
+  /* SERVICE STATUS */
+  .vehicle-service-status {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 12px;
+  }
+
+  .service-due {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* CARD BUTTONS */
+  .vehicle-card-actions {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .vehicle-card-actions .vehicle-view-btn {
+    grid-column: 1 / -1;
+  }
+
+  .vehicle-card-actions .btn {
+    width: 100%;
+    min-height: 44px;
+  }
+
+  /* ADD ANOTHER VEHICLE */
+  .add-vehicle-card {
+    min-height: 260px;
+    padding: 25px 20px !important;
+    text-align: center;
+  }
+
+  .add-vehicle-card h3 {
+    font-size: 20px;
+  }
+
+  .add-vehicle-card p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .add-vehicle-outline {
+    width: 100%;
+  }
+}
+
+/* =========================================================
+   MOBILE RESPONSIVE - VEHICLE DETAILS
+========================================================= */
+
+@media (max-width: 768px) {
+
+  /* PAGE */
+  .vehicles-page {
+    overflow-x: hidden;
+  }
+
+  .vehicles-page .container {
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
+
+  /* BACK BUTTON */
+  .vehicle-back-btn {
+    font-size: 13px;
+  }
+
+  /* HEADER */
+  .vehicle-details-header {
+    flex-direction: column-reverse;
+    align-items: flex-start !important;
+    gap: 15px;
+  }
+
+  .vehicle-details-header h1 {
+    font-size: 30px;
+    line-height: 1.2;
+  }
+
+  .vehicle-details-header p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .vehicle-details-header .large-vehicle-icon {
+    width: 58px;
+    height: 58px;
+  }
+
+  .vehicle-details-header .large-vehicle-icon i {
+    font-size: 26px;
+  }
+
+  /* DETAILS CARDS */
+  .vehicle-details-card {
+    padding: 20px !important;
+    border-radius: 18px;
+  }
+
+  .details-card-header {
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .details-card-header h3 {
+    font-size: 20px;
+  }
+
+  .details-card-header > i {
+    font-size: 24px;
+  }
+
+  /* BASIC INFORMATION */
+  .vehicle-details-card .row {
+    --bs-gutter-x: 0;
+  }
+
+  .vehicle-details-card .col-md-6 {
+    width: 100%;
+  }
+
+  .detail-item {
+    padding: 13px 0;
+  }
+
+  .detail-item span {
+    font-size: 10px;
+  }
+
+  .detail-item strong {
+    font-size: 14px;
+    word-break: break-word;
+  }
+
+  /* SERVICE STATUS */
+  .service-details-card {
+    padding: 20px !important;
+  }
+
+  .service-status-icon {
+    width: 50px;
+    height: 50px;
+    margin-top: 15px;
+  }
+
+  .service-status-icon i {
+    font-size: 22px;
+  }
+
+  .service-details-card h3 {
+    font-size: 21px;
+  }
+
+  .service-details-card p {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .service-status-box {
+    padding: 14px;
+  }
+
+  .service-status-box span {
+    font-size: 10px;
+  }
+
+  .service-status-box strong {
+    font-size: 13px;
+  }
+
+  /* UPCOMING APPOINTMENT */
+  .upcoming-service-box {
+    padding: 15px !important;
+  }
+
+  .upcoming-service-box > span {
+    font-size: 10px;
+  }
+
+  .upcoming-service-box strong {
+    font-size: 15px;
+  }
+
+  .upcoming-service-box p {
+    font-size: 13px;
+    margin-bottom: 6px;
+  }
+
+  /* BOOK SERVICE BUTTON */
+  .service-details-card .vehicle-book-btn {
+    width: 100%;
+    min-height: 46px;
+  }
+
+  /* SERVICE HISTORY HEADER */
+  .vehicle-details-card.mt-4 .details-card-header {
+    flex-direction: column;
+  }
+
+  .vehicle-details-card.mt-4 .details-card-header .vehicle-view-btn {
+    width: 100%;
+    text-align: center;
+    padding: 11px 15px;
+  }
+
+  /* SERVICE HISTORY */
+  .service-history-list {
+    margin-top: 15px;
+  }
+
+  .service-history-item {
+    display: grid !important;
+    grid-template-columns: auto 1fr;
+    gap: 12px;
+    padding: 16px 0 !important;
+  }
+
+  .service-history-icon {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+  }
+
+  .service-history-icon i {
+    font-size: 18px;
+  }
+
+  .service-history-info h4 {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  .service-history-info p {
+    font-size: 12px;
+    margin-bottom: 5px;
+    word-break: break-word;
+  }
+
+  .service-completed-badge {
+    grid-column: 2;
+    justify-self: start;
+    font-size: 10px;
+    margin-top: 2px;
+  }
+
+  /* EMPTY SERVICE HISTORY */
+  .empty-service-history {
+    padding: 30px 10px !important;
+  }
+
+  .empty-service-history h4 {
+    font-size: 18px;
+  }
+
+  .empty-service-history p {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+}
+
+/* =========================================================
+   MOBILE RESPONSIVE - BOOKINGS
+========================================================= */
+
+@media (max-width: 768px) {
+
+  /* PAGE */
+  .bookings-page {
+    overflow-x: hidden;
+  }
+
+  .bookings-page .container {
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
+
+  /* HEADER */
+  .bookings-header {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 20px;
+  }
+
+  .bookings-header h1 {
+    font-size: 30px;
+    line-height: 1.2;
+  }
+
+  .bookings-header p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .bookings-header .booking-new-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* =====================================================
+     FILTERS
+  ===================================================== */
+
+  .booking-filters {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding: 4px 2px 10px;
+    margin-left: -2px;
+    margin-right: -2px;
+
+    /* Hide scrollbar */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .booking-filters::-webkit-scrollbar {
+    display: none;
+  }
+
+  .booking-filter {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    padding: 9px 13px;
+    font-size: 12px;
+    border-radius: 10px;
+  }
+
+  .booking-filter span {
+    margin-left: 5px;
+  }
+
+  /* =====================================================
+     BOOKING CARD
+  ===================================================== */
+
+  .booking-card {
+    padding: 20px !important;
+    border-radius: 18px;
+  }
+
+  /* TOP */
+  .booking-card-top {
+    gap: 12px;
+    align-items: center;
+  }
+
+  .booking-icon {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+  }
+
+  .booking-icon i {
+    font-size: 18px;
+  }
+
+  .booking-status {
+    font-size: 10px;
+    padding: 6px 9px;
+  }
+
+  /* BOOKING INFO */
+  .booking-info {
+    margin-top: 18px;
+  }
+
+  .booking-info h2 {
+    font-size: 21px;
+    line-height: 1.3;
+  }
+
+  .booking-info p {
+    font-size: 13px;
+  }
+
+  /* STATUS MESSAGE */
+  .booking-status-message {
+    margin-top: 15px;
+    padding: 12px 13px !important;
+    border-radius: 10px;
+  }
+
+  .booking-status-message strong {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  /* BOOKING REFERENCE */
+  .booking-reference {
+    margin-top: 18px;
+    padding: 13px !important;
+  }
+
+  .booking-reference span {
+    font-size: 9px;
+  }
+
+  .booking-reference strong {
+    font-size: 13px;
+    word-break: break-word;
+  }
+
+  /* =====================================================
+     BOOKING DETAILS
+  ===================================================== */
+
+  .booking-details {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px !important;
+    margin-top: 18px;
+  }
+
+  .booking-detail-item {
+    min-width: 0;
+    gap: 9px;
+  }
+
+  .booking-detail-item i {
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+
+  .booking-detail-item span {
+    font-size: 9px;
+    display: block;
+    margin-bottom: 3px;
+  }
+
+  .booking-detail-item strong {
+    font-size: 12px;
+    line-height: 1.4;
+    word-break: break-word;
+  }
+
+  /* =====================================================
+     NOTES
+  ===================================================== */
+
+  .booking-notes {
+    margin-top: 18px;
+    padding: 13px !important;
+    border-radius: 10px;
+  }
+
+  .booking-notes span {
+    font-size: 9px;
+  }
+
+  .booking-notes p {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  /* =====================================================
+     ACTION BUTTONS
+  ===================================================== */
+
+  .booking-card-actions {
+    display: flex !important;
+    flex-direction: column;
+    gap: 9px !important;
+    margin-top: 20px;
+  }
+
+  .booking-card-actions .btn {
+    width: 100%;
+    min-height: 44px;
+    justify-content: center;
+    font-size: 12px;
+  }
+
+  /* =====================================================
+     EMPTY BOOKING CARD
+  ===================================================== */
+
+  .empty-bookings-card {
+    padding: 35px 20px !important;
+    border-radius: 18px;
+  }
+
+  .empty-bookings-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .empty-bookings-icon i {
+    font-size: 25px;
+  }
+
+  .empty-bookings-card h2 {
+    font-size: 22px;
+  }
+
+  .empty-bookings-card p {
+    font-size: 13px;
+    line-height: 1.6;
+    max-width: 100%;
+  }
+
+  /* =====================================================
+     BOOKING MODAL
+  ===================================================== */
+
+  .booking-modal-overlay {
+    padding: 15px;
+  }
+
+  .booking-modal {
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 20px !important;
+    border-radius: 18px;
+  }
+
+  .booking-modal-header {
+    gap: 10px;
+  }
+
+  .booking-modal-header h2 {
+    font-size: 21px;
+    line-height: 1.3;
+  }
+
+  .booking-modal-close {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+  }
+
+  .booking-modal-status {
+    margin-top: 18px;
+  }
+
+  .booking-modal-status p {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  /* MODAL DETAILS */
+  .booking-modal-details {
+    display: flex !important;
+    flex-direction: column;
+    gap: 14px !important;
+    margin-top: 18px;
+  }
+
+  .modal-detail {
+    gap: 12px;
+  }
+
+  .modal-detail i {
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+
+  .modal-detail span {
+    font-size: 9px;
+  }
+
+  .modal-detail strong {
+    font-size: 13px;
+    word-break: break-word;
+  }
+
+  /* MODAL NOTES */
+  .modal-notes {
+    padding: 13px !important;
+    margin-top: 18px;
+  }
+
+  .modal-notes span {
+    font-size: 9px;
+  }
+
+  .modal-notes p {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  /* MODAL BUTTONS */
+  .booking-modal-actions {
+    display: flex !important;
+    flex-direction: column;
+    gap: 9px !important;
+    margin-top: 20px;
+  }
+
+  .booking-modal-actions .btn {
+    width: 100%;
+    min-height: 44px;
+    justify-content: center;
+  }
+}
+
+
+/* ========================================
+   BOOK SERVICE - MOBILE RESPONSIVE
+======================================== */
+
+@media (max-width: 768px) {
+
+  .book-service-card {
+    padding: 20px;
+  }
+
+  .vehicle-details-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .vehicle-details-header h1 {
+    font-size: 30px;
+  }
+
+  .vehicle-details-header p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .large-vehicle-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .large-vehicle-icon i {
+    font-size: 25px;
+  }
+
+  .book-service-card .details-card-header {
+    gap: 15px;
+  }
+
+  .book-service-card .details-card-header h3 {
+    font-size: 20px;
+  }
+
+  .book-service-card form label {
+    font-size: 13px;
+  }
+
+  .book-service-card form input,
+  .book-service-card form select,
+  .book-service-card form textarea {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .book-service-card form textarea {
+    min-height: 120px;
+  }
+
+  .book-service-card .form-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .book-service-card .form-actions .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .booking-success-alert,
+  .booking-error-alert {
+    padding: 15px;
+    gap: 12px;
+  }
+
+  .booking-success-alert p,
+  .booking-error-alert p {
+    font-size: 13px;
+  }
+
+  .booking-success-alert button,
+  .booking-error-alert button {
+    margin-left: auto;
+  }
+
+  .vehicle-view-btn {
+    width: 100%;
+  }
+
+}

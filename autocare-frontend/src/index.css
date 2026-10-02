@@ -1,0 +1,112 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+/* =========================================
+   QUICK SERVICES - MOBILE
+========================================= */
+
+@media (max-width: 576px) {
+
+  .quick-services {
+    padding: 45px 0;
+  }
+
+  .quick-services .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  /* Section heading */
+  .quick-services .section-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 22px;
+  }
+
+  .quick-services .section-header span {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+  }
+
+  .quick-services .section-header h2 {
+    font-size: 24px;
+    line-height: 1.2;
+    margin-top: 6px;
+  }
+
+  /* View all */
+  .quick-services .view-all {
+    font-size: 13px;
+    text-decoration: none;
+  }
+
+  /* Cards */
+  .quick-services .row {
+    --bs-gutter-x: 10px;
+    --bs-gutter-y: 10px;
+  }
+
+  .quick-services .quick-service-card {
+    min-height: 145px;
+    padding: 18px 10px;
+    border-radius: 12px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+  }
+
+  /* Icon */
+  .quick-services .quick-icon {
+    width: 42px;
+    height: 42px;
+    margin-bottom: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+  }
+
+  .quick-services .quick-icon i {
+    font-size: 19px;
+  }
+
+  /* Service name */
+  .quick-services .quick-service-card h6 {
+    font-size: 13px;
+    margin-bottom: 5px;
+    line-height: 1.2;
+  }
+
+  /* Description */
+  .quick-services .quick-service-card small {
+    font-size: 10px;
+    line-height: 1.3;
+  }
+
+  /* Prevent ugly underline on mobile */
+  .quick-services .quick-service-card,
+  .quick-services .quick-service-card:hover,
+  .quick-services .quick-service-card:focus,
+  .quick-services .quick-service-card:active {
+    text-decoration: none;
+  }
+
+}

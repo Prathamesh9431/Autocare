@@ -1,0 +1,65 @@
+# ================================
+# React Frontend
+# ================================
+
+autocare-frontend/node_modules/
+autocare-frontend/build/
+autocare-frontend/dist/
+
+# Environment files
+autocare-frontend/.env
+autocare-frontend/.env.local
+autocare-frontend/.env.development
+autocare-frontend/.env.production
+
+
+# ================================
+# Spring Boot Backend
+# ================================
+
+autocare-backend/target/
+
+# Environment / secrets
+autocare-backend/.env
+autocare-backend/application-local.properties
+autocare-backend/application-local.yml
+
+
+# ================================
+# IDE
+# ================================
+
+.vscode/
+.idea/
+*.iml
+
+
+# ================================
+# Java
+# ================================
+
+*.class
+
+
+# ================================
+# OS
+# ================================
+
+.DS_Store
+Thumbs.db
+
+
+# ================================
+# Logs
+# ================================
+
+*.log
+logs/
+
+
+# ================================
+# Temporary files
+# ================================
+
+*.tmp
+*.temp

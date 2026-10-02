@@ -1,0 +1,34 @@
+Development Plan
+Phase 1
+✅ Create Spring Boot project
+✅ Connect MySQL
+✅ Test database connection
+Phase 2
+User Registration API
+Login API
+Phase 3
+Add Vehicle API
+Get Vehicles API
+Delete Vehicle API
+Phase 4
+Book Service API
+Get Bookings API
+Update Booking Status API
+Phase 5
+Connect React with Spring Boot using Axios
+First APIs we'll build
+POST   /api/register
+
+POST   /api/login
+
+GET    /api/vehicles
+
+POST   /api/vehicles
+
+DELETE /api/vehicles/{id}
+
+GET    /api/bookings
+
+POST   /api/bookings
+
+PUT    /api/bookings/{id}
