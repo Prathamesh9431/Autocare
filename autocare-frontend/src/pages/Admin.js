@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import api from "../services/axiosConfig";
 import { sendBookingEmail } from "../services/emailService";
 import { useNotification } from "../context/NotificationContext";
@@ -14,11 +14,12 @@ function Admin() {
   // LOAD BOOKINGS
   // ================================
 
-  useEffect(() => {
-    loadBookings();
-  }, []);
 
-  const loadBookings = async () => {
+    // ================================
+  // LOAD BOOKINGS
+  // ================================
+
+  const loadBookings = useCallback(async () => {
     try {
       setLoading(true);
       setError("");
@@ -39,7 +40,11 @@ function Admin() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [showNotification]);
+
+  useEffect(() => {
+    loadBookings();
+  }, [loadBookings]);
 
   // ================================
   // UPDATE STATUS

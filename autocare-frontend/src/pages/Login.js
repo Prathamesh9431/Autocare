@@ -34,9 +34,7 @@ const { showNotification } = useNotification();
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
-  const [showNewPassword, setShowNewPassword] = useState(false);
-const [showConfirmPassword, setShowConfirmPassword] =
-  useState(false);
+  
 
   const [forgotStep, setForgotStep] = useState(1);
   const [forgotMessage, setForgotMessage] = useState("");

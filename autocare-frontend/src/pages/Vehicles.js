@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, useContext } from "react";
+import { useState, useRef, useEffect, useContext, useCallback } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { AuthContext } from "../context/AuthContext";
@@ -40,7 +40,11 @@ function Vehicles({ vehicles, setVehicles }) {
   // LOAD CURRENT USER'S VEHICLES
   // ========================================
 
-  const loadVehicles = async () => {
+    // ========================================
+  // LOAD CURRENT USER'S VEHICLES
+  // ========================================
+
+  const loadVehicles = useCallback(async () => {
     if (!user?.id) {
       setVehicles([]);
       return;
@@ -63,7 +67,7 @@ function Vehicles({ vehicles, setVehicles }) {
         type: "error",
       });
     }
-  };
+  }, [user?.id, setVehicles, showNotification]);
 
   // ========================================
   // LOAD WHEN USER CHANGES
@@ -71,7 +75,7 @@ function Vehicles({ vehicles, setVehicles }) {
 
   useEffect(() => {
     loadVehicles();
-  }, [user]);
+  }, [loadVehicles]);
 
   // ========================================
   // HANDLE INPUT CHANGE
