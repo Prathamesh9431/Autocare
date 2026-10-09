@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import axios from "axios";
+import api from "../services/axiosConfig";
 import { AuthContext } from "../context/AuthContext";
 
 function Bookings({ bookings, setBookings }) {
@@ -24,7 +24,13 @@ function Bookings({ bookings, setBookings }) {
   // LOAD USER BOOKINGS
   // ========================================
 
-  useEffect(() => {
+  // ========================================
+// LOAD USER BOOKINGS
+// ========================================
+
+useEffect(() => {
+
+  const loadBookings = async () => {
 
     // If user is not logged in,
     // don't show any bookings.
@@ -33,22 +39,11 @@ function Bookings({ bookings, setBookings }) {
       return;
     }
 
-    loadBookings();
-
-  }, [user]);
-
-  const loadBookings = async () => {
-
-    if (!user?.id) {
-      setBookings([]);
-      return;
-    }
-
     try {
 
-      const response = await axios.get(
-        `http://localhost:8081/api/bookings/user/${user.id}`
-      );
+      const response = await api.get(
+  `/api/bookings/user/${user.id}`
+);
 
       setBookings(response.data);
 
@@ -62,6 +57,10 @@ function Bookings({ bookings, setBookings }) {
       setBookings([]);
     }
   };
+
+  loadBookings();
+
+}, [user, setBookings]);
 
   // ========================================
   // FILTER BOOKINGS
@@ -195,9 +194,9 @@ function Bookings({ bookings, setBookings }) {
 
     try {
 
-      const response = await axios.put(
-        `http://localhost:8081/api/bookings/${id}/cancel`
-      );
+      const response = await api.put(
+  `/api/bookings/${id}/cancel`
+);
 
       setBookings((previousBookings) =>
         previousBookings.map((booking) =>
@@ -242,9 +241,9 @@ function Bookings({ bookings, setBookings }) {
 
     try {
 
-      const response = await axios.put(
-        `http://localhost:8081/api/bookings/${id}/complete`
-      );
+     const response = await api.put(
+  `/api/bookings/${id}/complete`
+);
 
       setBookings((previousBookings) =>
         previousBookings.map((booking) =>

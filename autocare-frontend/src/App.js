@@ -1,10 +1,23 @@
 import { useState, useEffect, useContext } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import axios from "axios";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Navigate
+} from "react-router-dom";
 
-import { AuthContext } from "./context/AuthContext";
+import api from "./services/axiosConfig";
+
+import {
+  NotificationProvider
+} from "./context/NotificationContext";
+
+import {
+  AuthContext
+} from "./context/AuthContext";
+
 import AuthProvider from "./context/AuthContext";
-import ProtectedAdminRoute from "./components/ProtectedAdminRoute";
+
 import Navbar from "./components/Navbar";
 import Loader from "./components/Loader";
 
@@ -23,6 +36,44 @@ import "./App.css";
 
 
 // =====================================================
+// PROTECTED ROUTE
+// =====================================================
+
+function ProtectedRoute({ children }) {
+
+  const { user } = useContext(AuthContext);
+
+  if (!user) {
+    return <Navigate to="/login" replace />;
+  }
+
+  return children;
+}
+
+
+// =====================================================
+// ADMIN ROUTE
+// =====================================================
+
+function AdminRoute({ children }) {
+
+  const { user } = useContext(AuthContext);
+
+  if (!user) {
+    return <Navigate to="/login" replace />;
+  }
+
+  if (
+    String(user.role).toUpperCase() !== "ADMIN"
+  ) {
+    return <Navigate to="/dashboard" replace />;
+  }
+
+  return children;
+}
+
+
+// =====================================================
 // MAIN APP CONTENT
 // =====================================================
 
@@ -32,15 +83,7 @@ function AppContent() {
 
   const [loading, setLoading] = useState(true);
 
-  // =====================================================
-  // VEHICLES
-  // =====================================================
-
   const [vehicles, setVehicles] = useState([]);
-
-  // =====================================================
-  // BOOKINGS
-  // =====================================================
 
   const [bookings, setBookings] = useState([]);
 
@@ -54,38 +97,28 @@ function AppContent() {
     const loadBookings = async () => {
 
       if (!user?.id) {
-
-        console.log("NO LOGGED IN USER");
-
         setBookings([]);
-
         return;
       }
 
-      console.log("=================================");
-      console.log("LOGGED IN USER:", user);
-      console.log("USER ID:", user.id);
-      console.log(
-        "BOOKING URL:",
-        `http://localhost:8081/api/bookings/user/${user.id}`
-      );
-      console.log("=================================");
-
-
       try {
 
-        const response = await axios.get(
-          `http://localhost:8081/api/bookings/user/${user.id}`
+        console.log(
+          "Loading bookings for user:",
+          user.id
+        );
+
+        const response = await api.get(
+          `/api/bookings/user/${user.id}`
         );
 
         console.log(
-          "BOOKINGS FROM BACKEND:",
+          "USER BOOKINGS:",
           response.data
         );
 
-
-        const formattedBookings = response.data.map(
-          (booking) => ({
+        const formattedBookings =
+          response.data.map((booking) => ({
 
             id: booking.id,
 
@@ -126,11 +159,9 @@ function AppContent() {
               booking.notes,
 
             status:
-              booking.status,
+              booking.status
 
-          })
-        );
-
+          }));
 
         setBookings(formattedBookings);
 
@@ -141,12 +172,21 @@ function AppContent() {
           error
         );
 
+        console.error(
+          "STATUS:",
+          error.response?.status
+        );
+
+        console.error(
+          "RESPONSE:",
+          error.response?.data
+        );
+
         setBookings([]);
 
       }
 
     };
-
 
     loadBookings();
 
@@ -162,17 +202,19 @@ function AppContent() {
     const loadUserVehicles = async () => {
 
       if (!user?.id) {
-
         setVehicles([]);
-
         return;
       }
 
-
       try {
 
-        const response = await axios.get(
-          `http://localhost:8081/api/vehicles/user/${user.id}`
+        console.log(
+          "Loading vehicles for user:",
+          user.id
+        );
+
+        const response = await api.get(
+          `/api/vehicles/user/${user.id}`
         );
 
         console.log(
@@ -189,12 +231,21 @@ function AppContent() {
           error
         );
 
+        console.error(
+          "STATUS:",
+          error.response?.status
+        );
+
+        console.error(
+          "RESPONSE:",
+          error.response?.data
+        );
+
         setVehicles([]);
 
       }
 
     };
-
 
     loadUserVehicles();
 
@@ -237,9 +288,7 @@ function AppContent() {
   // =====================================================
 
   if (loading) {
-
     return <Loader />;
-
   }
 
 
@@ -255,7 +304,7 @@ function AppContent() {
 
       <Routes>
 
-        {/* HOME */}
+        {/* ================= HOME ================= */}
 
         <Route
           path="/"
@@ -263,20 +312,7 @@ function AppContent() {
         />
 
 
-        {/* DASHBOARD */}
-
-        <Route
-          path="/dashboard"
-          element={
-            <Dashboard
-              vehicles={vehicles}
-              bookings={bookings}
-            />
-          }
-        />
-
-
-        {/* SERVICES */}
+        {/* ================= SERVICES ================= */}
 
         <Route
           path="/services"
@@ -284,61 +320,7 @@ function AppContent() {
         />
 
 
-        {/* VEHICLES */}
-
-        <Route
-          path="/vehicles"
-          element={
-            <Vehicles
-              vehicles={vehicles}
-              setVehicles={setVehicles}
-            />
-          }
-        />
-
-
-        {/* VEHICLE DETAILS */}
-
-        <Route
-          path="/vehicles/:id"
-          element={
-            <VehicleDetails
-              vehicles={vehicles}
-              bookings={bookings}
-            />
-          }
-        />
-
-
-        {/* BOOKINGS */}
-
-        <Route
-          path="/bookings"
-          element={
-            <Bookings
-              bookings={bookings}
-              setBookings={setBookings}
-            />
-          }
-        />
-
-
-        {/* BOOK SERVICE */}
-
-        <Route
-          path="/book-service"
-          element={
-            <BookService
-              vehicles={vehicles}
-              bookings={bookings}
-              setBookings={setBookings}
-              setVehicles={setVehicles}
-            />
-          }
-        />
-
-
-        {/* LOGIN */}
+        {/* ================= LOGIN ================= */}
 
         <Route
           path="/login"
@@ -346,7 +328,7 @@ function AppContent() {
         />
 
 
-        {/* REGISTER */}
+        {/* ================= REGISTER ================= */}
 
         <Route
           path="/register"
@@ -354,16 +336,118 @@ function AppContent() {
         />
 
 
-        {/* ADMIN */}
+        {/* ================= DASHBOARD ================= */}
 
         <Route
-  path="/admin"
-  element={
-    <ProtectedAdminRoute>
-      <Admin />
-    </ProtectedAdminRoute>
-  }
-/>
+          path="/dashboard"
+          element={
+            <ProtectedRoute>
+
+              <Dashboard
+                vehicles={vehicles}
+                bookings={bookings}
+              />
+
+            </ProtectedRoute>
+          }
+        />
+
+
+        {/* ================= VEHICLES ================= */}
+
+        <Route
+          path="/vehicles"
+          element={
+            <ProtectedRoute>
+
+              <Vehicles
+                vehicles={vehicles}
+                setVehicles={setVehicles}
+              />
+
+            </ProtectedRoute>
+          }
+        />
+
+
+        {/* ================= VEHICLE DETAILS ================= */}
+
+        <Route
+          path="/vehicles/:id"
+          element={
+            <ProtectedRoute>
+
+              <VehicleDetails
+                vehicles={vehicles}
+                bookings={bookings}
+              />
+
+            </ProtectedRoute>
+          }
+        />
+
+
+        {/* ================= BOOKINGS ================= */}
+
+        <Route
+          path="/bookings"
+          element={
+            <ProtectedRoute>
+
+              <Bookings
+                bookings={bookings}
+                setBookings={setBookings}
+              />
+
+            </ProtectedRoute>
+          }
+        />
+
+
+        {/* ================= BOOK SERVICE ================= */}
+
+        <Route
+          path="/book-service"
+          element={
+            <ProtectedRoute>
+
+              <BookService
+                vehicles={vehicles}
+                bookings={bookings}
+                setBookings={setBookings}
+                setVehicles={setVehicles}
+              />
+
+            </ProtectedRoute>
+          }
+        />
+
+
+        {/* ================= ADMIN ================= */}
+
+        <Route
+          path="/admin"
+          element={
+            <AdminRoute>
+
+              <Admin />
+
+            </AdminRoute>
+          }
+        />
+
+
+        {/* ================= UNKNOWN URL ================= */}
+
+        <Route
+          path="*"
+          element={
+            <Navigate
+              to="/"
+              replace
+            />
+          }
+        />
 
       </Routes>
 
@@ -383,12 +467,16 @@ function App() {
 
     <AuthProvider>
 
-      <AppContent />
+      <NotificationProvider>
+
+        <AppContent />
+
+      </NotificationProvider>
 
     </AuthProvider>
 
   );
-
 }
+
 
 export default App;

@@ -3,10 +3,12 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import emailjs from "@emailjs/browser";
 import { AuthContext } from "../context/AuthContext";
+import { useNotification } from "../context/NotificationContext";
 
 function Login() {
   const navigate = useNavigate();
   const { login } = useContext(AuthContext);
+const { showNotification } = useNotification();
 
   // ================================
   // LOGIN DATA
@@ -33,8 +35,8 @@ function Login() {
   const [confirmPassword, setConfirmPassword] = useState("");
 
   const [showNewPassword, setShowNewPassword] = useState(false);
-  const [showConfirmPassword, setShowConfirmPassword] =
-    useState(false);
+const [showConfirmPassword, setShowConfirmPassword] =
+  useState(false);
 
   const [forgotStep, setForgotStep] = useState(1);
   const [forgotMessage, setForgotMessage] = useState("");
@@ -84,13 +86,19 @@ function Login() {
 
       login(response.data);
 
-      alert("Login Successful!");
+      // remove browser alert
 
-      if (response.data.role === "ADMIN") {
-        navigate("/admin");
-      } else {
-        navigate("/dashboard");
-      }
+showNotification({
+  title: "Login successful",
+  message: "Welcome back to AutoCare!",
+  type: "success",
+});
+
+      if (response.data.user.role === "ADMIN") {
+    navigate("/admin");
+} else {
+    navigate("/dashboard");
+}
     } catch (error) {
       if (error.response) {
         setError(
@@ -115,8 +123,8 @@ function Login() {
     setConfirmPassword("");
     setForgotMessage("");
     setForgotError("");
-    setShowNewPassword(false);
-    setShowConfirmPassword(false);
+    
+    
     setShowForgotPassword(true);
   };
 
@@ -132,8 +140,7 @@ function Login() {
     setOtp("");
     setNewPassword("");
     setConfirmPassword("");
-    setShowNewPassword(false);
-    setShowConfirmPassword(false);
+    
   };
 
   // ================================

@@ -77,38 +77,48 @@ public class UserService {
     }
 
     // ================================
-    // GENERATE OTP
+    // GENERATE RESET OTP
     // ================================
 
     public String generateResetOtp(String email) {
 
-    User user = userRepository.findByEmail(email)
-            .orElseThrow(() ->
-                    new RuntimeException(
-                            "No account found with this email"
-                    ));
+        User user = userRepository.findByEmail(email)
+                .orElseThrow(() ->
+                        new RuntimeException(
+                                "No account found with this email"
+                        ));
 
-    String otp = String.format(
-            "%06d",
-            new Random().nextInt(1000000)
-    );
+        // Generate 6-digit OTP
+        String otp = String.format(
+                "%06d",
+                new Random().nextInt(1000000)
+        );
 
-    long expiry =
-            System.currentTimeMillis()
-            + (5 * 60 * 1000);
+        // OTP expires after 5 minutes
+        long expiry =
+                System.currentTimeMillis()
+                + (5 * 60 * 1000);
 
-    user.setResetOtp(otp);
-    user.setResetOtpExpiry(expiry);
+        // Save OTP
+        user.setResetOtp(otp);
+        user.setResetOtpExpiry(expiry);
 
-    userRepository.save(user);
+        userRepository.save(user);
 
-    System.out.println("PASSWORD RESET OTP: " + otp);
+        // Show OTP in backend console
+        // This is useful for testing
+        System.out.println("================================");
+        System.out.println("PASSWORD RESET OTP");
+        System.out.println("Email: " + email);
+        System.out.println("OTP: " + otp);
+        System.out.println("Expires in: 5 minutes");
+        System.out.println("================================");
 
-    return otp;
-}
+        return otp;
+    }
 
     // ================================
-    // VERIFY OTP
+    // VERIFY RESET OTP
     // ================================
 
     public boolean verifyResetOtp(

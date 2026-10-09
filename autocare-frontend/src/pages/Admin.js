@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
+import api from "../services/axiosConfig";
 import { sendBookingEmail } from "../services/emailService";
+import { useNotification } from "../context/NotificationContext";
 
 function Admin() {
   const [bookings, setBookings] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+
+  const { showNotification } = useNotification();
 
   // ================================
   // LOAD BOOKINGS
@@ -17,17 +20,23 @@ function Admin() {
 
   const loadBookings = async () => {
     try {
-      const response = await axios.get(
-        "http://localhost:8081/api/bookings"
-      );
+      setLoading(true);
+      setError("");
+
+      const response = await api.get("/api/bookings");
 
       setBookings(response.data);
-      setLoading(false);
-
     } catch (error) {
-      console.error("Failed to load bookings:", error);
+      console.error("ADMIN LOAD BOOKINGS ERROR:", error);
 
       setError("Unable to load bookings.");
+
+      showNotification({
+        title: "Loading Failed",
+        message: "Unable to load service requests.",
+        type: "error",
+      });
+    } finally {
       setLoading(false);
     }
   };
@@ -38,8 +47,10 @@ function Admin() {
 
   const updateStatus = async (id, status) => {
     try {
-      const response = await axios.put(
-        `http://localhost:8081/api/bookings/${id}/status`,
+      setError("");
+
+      const response = await api.put(
+        `/api/bookings/${id}/status`,
         null,
         {
           params: {
@@ -50,14 +61,7 @@ function Admin() {
 
       const updatedBooking = response.data;
 
-      console.log("================================");
-      console.log("BOOKING STATUS UPDATED");
-      console.log("BOOKING:", updatedBooking);
-      console.log("STATUS:", status);
-      console.log("USER ID:", updatedBooking.userId);
-      console.log("================================");
-
-      // Update booking on admin page
+      // Update booking immediately on screen
       setBookings((previousBookings) =>
         previousBookings.map((booking) =>
           booking.id === id
@@ -66,82 +70,101 @@ function Admin() {
         )
       );
 
-      setError("");
-
-      // ========================================
-      // SEND EMAIL WHEN BOOKING IS CONFIRMED
-      // ========================================
+      // ================================
+      // CONFIRMED BOOKING EMAIL
+      // ================================
 
       if (status === "Confirmed") {
-
-        console.log("CONFIRMED BOOKING - GETTING CUSTOMER");
-
         try {
-
-          const customerResponse = await axios.get(
-            `http://localhost:8081/api/users/${updatedBooking.userId}`
+          const customerResponse = await api.get(
+            `/api/users/${updatedBooking.userId}`
           );
 
           const customer = customerResponse.data;
-
-          console.log("CUSTOMER DETAILS:", customer);
-          console.log("CUSTOMER EMAIL:", customer.email);
-
-          // ========================================
-          // SEND EMAIL USING EMAILJS
-          // ========================================
-
-          console.log("SENDING EMAIL...");
 
           await sendBookingEmail(
             updatedBooking,
             customer
           );
 
-          console.log(
-            "================================"
-          );
-
-          console.log(
-            "EMAIL SENT SUCCESSFULLY"
-          );
-
-          console.log(
-            "================================"
-          );
+          showNotification({
+            title: "Booking Confirmed",
+            message:
+              "Booking confirmed and confirmation email sent.",
+            type: "success",
+          });
 
         } catch (emailError) {
-
           console.error(
-            "================================"
-          );
-
-          console.error(
-            "EMAIL SENDING FAILED"
-          );
-
-          console.error(
+            "EMAIL SENDING FAILED:",
             emailError
           );
 
-          console.error(
-            "================================"
-          );
-
-          // Booking remains confirmed
+          // Booking was successfully confirmed,
+          // only email failed.
+          showNotification({
+            title: "Booking Confirmed",
+            message:
+              "Booking confirmed, but the confirmation email could not be sent.",
+            type: "warning",
+          });
         }
+
+        return;
       }
 
+      // ================================
+      // REJECTED
+      // ================================
+
+      if (status === "Rejected") {
+        showNotification({
+          title: "Booking Rejected",
+          message:
+            "The service request has been rejected.",
+          type: "warning",
+        });
+
+        return;
+      }
+
+      // ================================
+      // OTHER STATUS
+      // ================================
+
+      showNotification({
+        title: "Status Updated",
+        message:
+          `Booking status changed to ${status}.`,
+        type: "success",
+      });
+
     } catch (error) {
+      console.error(
+        "FAILED TO UPDATE BOOKING STATUS:",
+        error
+      );
 
       console.error(
-        "Failed to update booking status:",
-        error
+        "STATUS:",
+        error.response?.status
+      );
+
+      console.error(
+        "RESPONSE:",
+        error.response?.data
       );
 
       setError(
         "Unable to update booking status."
       );
+
+      showNotification({
+        title: "Update Failed",
+        message:
+          "Unable to update the booking status. Please try again.",
+        type: "error",
+      });
     }
   };
 
@@ -176,6 +199,10 @@ function Admin() {
       booking.status === "Rejected"
   ).length;
 
+  // ================================
+  // PAGE
+  // ================================
+
   return (
     <div className="container py-5">
 
@@ -205,10 +232,8 @@ function Admin() {
 
       {error && (
         <div
-          style={{
-            color: "red",
-            marginBottom: "20px",
-          }}
+          className="alert alert-danger"
+          role="alert"
         >
           {error}
         </div>
@@ -219,6 +244,8 @@ function Admin() {
       ================================= */}
 
       <div className="row g-4 mb-5">
+
+        {/* TOTAL */}
 
         <div className="col-md-6 col-lg-3">
 
@@ -242,6 +269,8 @@ function Admin() {
 
         </div>
 
+        {/* PENDING */}
+
         <div className="col-md-6 col-lg-3">
 
           <div className="admin-stat-card">
@@ -264,6 +293,8 @@ function Admin() {
 
         </div>
 
+        {/* CONFIRMED */}
+
         <div className="col-md-6 col-lg-3">
 
           <div className="admin-stat-card">
@@ -285,6 +316,8 @@ function Admin() {
           </div>
 
         </div>
+
+        {/* COMPLETED */}
 
         <div className="col-md-6 col-lg-3">
 
@@ -311,10 +344,12 @@ function Admin() {
       </div>
 
       {/* ================================
-          OTHER COUNTS
+          CANCELLED + REJECTED
       ================================= */}
 
       <div className="row g-4 mb-5">
+
+        {/* CANCELLED */}
 
         <div className="col-md-6">
 
@@ -337,6 +372,8 @@ function Admin() {
           </div>
 
         </div>
+
+        {/* REJECTED */}
 
         <div className="col-md-6">
 
@@ -370,19 +407,27 @@ function Admin() {
         Service Requests
       </h2>
 
+      {/* LOADING */}
+
       {loading && (
         <p>
           Loading requests...
         </p>
       )}
 
+      {/* NO BOOKINGS */}
+
       {!loading &&
         !error &&
         bookings.length === 0 && (
+
           <p>
             No service requests found.
           </p>
+
         )}
+
+      {/* BOOKINGS */}
 
       {!loading &&
         bookings.length > 0 && (
@@ -390,173 +435,211 @@ function Admin() {
           <div className="mt-4">
 
             {bookings
-  .slice()
-  .reverse()
-  .map((booking) => (
+              .slice()
+              .reverse()
+              .map((booking) => (
 
-              <div
-                key={booking.id}
-                className="admin-booking-card"
-              >
+                <div
+                  key={booking.id}
+                  className="admin-booking-card"
+                >
 
-                <h3>
-                  {booking.serviceType}
-                </h3>
+                  {/* SERVICE */}
 
-                <p>
-                  <strong>
-                    Booking Reference:
-                  </strong>{" "}
-                  {booking.bookingReference}
-                </p>
+                  <h3>
+                    {booking.serviceType}
+                  </h3>
 
-                <p>
-                  <strong>
-                    Vehicle:
-                  </strong>{" "}
-                  {booking.vehicleName ||
-                    "Not available"}
-                </p>
+                  {/* REFERENCE */}
 
-                <p>
-                  <strong>
-                    Registration:
-                  </strong>{" "}
-                  {booking.registration ||
-                    "Not available"}
-                </p>
-
-                <p>
-                  <strong>
-                    Date:
-                  </strong>{" "}
-                  {booking.serviceDate}
-                </p>
-
-                <p>
-                  <strong>
-                    Time:
-                  </strong>{" "}
-                  {booking.serviceTime}
-                </p>
-
-                <p>
-                  <strong>
-                    Status:
-                  </strong>{" "}
-                  {booking.status}
-                </p>
-
-                {booking.notes && (
                   <p>
                     <strong>
-                      Notes:
+                      Booking Reference:
                     </strong>{" "}
-                    {booking.notes}
+                    {booking.bookingReference}
                   </p>
-                )}
 
-                {/* PENDING */}
+                  {/* VEHICLE */}
 
-                {booking.status === "Pending" && (
+                  <p>
+                    <strong>
+                      Vehicle:
+                    </strong>{" "}
+                    {booking.vehicleName ||
+                      "Not available"}
+                  </p>
 
-                  <div className="mt-3">
+                  {/* REGISTRATION */}
 
-                    <button
-                      type="button"
-                      className="btn btn-success me-2"
-                      onClick={() =>
-                        updateStatus(
-                          booking.id,
-                          "Confirmed"
-                        )
-                      }
-                    >
-                      <i className="bi bi-check-circle me-1"></i>
-                      Accept
-                    </button>
+                  <p>
+                    <strong>
+                      Registration:
+                    </strong>{" "}
+                    {booking.registration ||
+                      "Not available"}
+                  </p>
 
-                    <button
-                      type="button"
-                      className="btn btn-danger"
-                      onClick={() =>
-                        updateStatus(
-                          booking.id,
-                          "Rejected"
-                        )
-                      }
-                    >
-                      <i className="bi bi-x-circle me-1"></i>
-                      Reject
-                    </button>
+                  {/* DATE */}
 
-                  </div>
+                  <p>
+                    <strong>
+                      Date:
+                    </strong>{" "}
+                    {booking.serviceDate}
+                  </p>
 
-                )}
+                  {/* TIME */}
 
-                {/* CONFIRMED */}
+                  <p>
+                    <strong>
+                      Time:
+                    </strong>{" "}
+                    {booking.serviceTime}
+                  </p>
 
-                {booking.status === "Confirmed" && (
+                  {/* STATUS */}
 
-                  <div className="mt-3">
+                  <p>
+                    <strong>
+                      Status:
+                    </strong>{" "}
+                    {booking.status}
+                  </p>
 
-                    <span className="badge bg-success">
-                      <i className="bi bi-check-circle me-1"></i>
-                      Service Confirmed
-                    </span>
+                  {/* NOTES */}
 
-                  </div>
+                  {booking.notes && (
+                    <p>
+                      <strong>
+                        Notes:
+                      </strong>{" "}
+                      {booking.notes}
+                    </p>
+                  )}
 
-                )}
+                  {/* ================================
+                      PENDING
+                  ================================= */}
 
-                {/* COMPLETED */}
+                  {booking.status === "Pending" && (
 
-                {booking.status === "Completed" && (
+                    <div className="mt-3">
 
-                  <div className="mt-3">
+                      <button
+                        type="button"
+                        className="btn btn-success me-2"
+                        onClick={() =>
+                          updateStatus(
+                            booking.id,
+                            "Confirmed"
+                          )
+                        }
+                      >
+                        <i className="bi bi-check-circle me-1"></i>
+                        Accept
+                      </button>
 
-                    <span className="badge bg-primary">
-                      <i className="bi bi-check2-all me-1"></i>
-                      Service Completed
-                    </span>
+                      <button
+                        type="button"
+                        className="btn btn-danger"
+                        onClick={() =>
+                          updateStatus(
+                            booking.id,
+                            "Rejected"
+                          )
+                        }
+                      >
+                        <i className="bi bi-x-circle me-1"></i>
+                        Reject
+                      </button>
 
-                  </div>
+                    </div>
 
-                )}
+                  )}
 
-                {/* REJECTED */}
+                  {/* ================================
+                      CONFIRMED
+                  ================================= */}
 
-                {booking.status === "Rejected" && (
+                  {booking.status === "Confirmed" && (
 
-                  <div className="mt-3">
+                    <div className="mt-3">
 
-                    <span className="badge bg-danger">
-                      <i className="bi bi-x-circle me-1"></i>
-                      Request Rejected
-                    </span>
+                      <span className="badge bg-success">
 
-                  </div>
+                        <i className="bi bi-check-circle me-1"></i>
 
-                )}
+                        Service Confirmed
 
-                {/* CANCELLED */}
+                      </span>
 
-                {booking.status === "Cancelled" && (
+                    </div>
 
-                  <div className="mt-3">
+                  )}
 
-                    <span className="badge bg-secondary">
-                      <i className="bi bi-x-circle me-1"></i>
-                      Booking Cancelled
-                    </span>
+                  {/* ================================
+                      COMPLETED
+                  ================================= */}
 
-                  </div>
+                  {booking.status === "Completed" && (
 
-                )}
+                    <div className="mt-3">
 
-              </div>
+                      <span className="badge bg-primary">
 
-            ))}
+                        <i className="bi bi-check2-all me-1"></i>
+
+                        Service Completed
+
+                      </span>
+
+                    </div>
+
+                  )}
+
+                  {/* ================================
+                      REJECTED
+                  ================================= */}
+
+                  {booking.status === "Rejected" && (
+
+                    <div className="mt-3">
+
+                      <span className="badge bg-danger">
+
+                        <i className="bi bi-x-circle me-1"></i>
+
+                        Request Rejected
+
+                      </span>
+
+                    </div>
+
+                  )}
+
+                  {/* ================================
+                      CANCELLED
+                  ================================= */}
+
+                  {booking.status === "Cancelled" && (
+
+                    <div className="mt-3">
+
+                      <span className="badge bg-secondary">
+
+                        <i className="bi bi-x-circle me-1"></i>
+
+                        Booking Cancelled
+
+                      </span>
+
+                    </div>
+
+                  )}
+
+                </div>
+
+              ))}
 
           </div>
 

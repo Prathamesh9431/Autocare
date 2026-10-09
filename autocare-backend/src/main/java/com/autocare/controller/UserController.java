@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.autocare.dto.LoginRequest;
+import com.autocare.dto.LoginResponse;
 import com.autocare.entity.User;
+import com.autocare.service.JwtService;
 import com.autocare.service.UserService;
 
 @RestController
@@ -20,9 +22,14 @@ import com.autocare.service.UserService;
 public class UserController {
 
     private final UserService userService;
+    private final JwtService jwtService;
 
-    public UserController(UserService userService) {
+    public UserController(
+            UserService userService,
+            JwtService jwtService) {
+
         this.userService = userService;
+        this.jwtService = jwtService;
     }
 
     // ================================
@@ -40,13 +47,17 @@ public class UserController {
     // ================================
 
     @PostMapping("/login")
-    public User login(
+    public LoginResponse login(
             @RequestBody LoginRequest loginRequest) {
 
-        return userService.login(
+        User user = userService.login(
                 loginRequest.getEmail(),
                 loginRequest.getPassword()
         );
+
+        String token = jwtService.generateToken(user);
+
+        return new LoginResponse(user, token);
     }
 
     // ================================
@@ -70,8 +81,7 @@ public class UserController {
 
         String email = request.get("email");
 
-        String otp =
-                userService.generateResetOtp(email);
+        String otp = userService.generateResetOtp(email);
 
         return otp;
     }
@@ -84,14 +94,12 @@ public class UserController {
     public String verifyOtp(
             @RequestBody VerifyOtpRequest request) {
 
-        boolean valid =
-                userService.verifyResetOtp(
-                        request.getEmail(),
-                        request.getOtp()
-                );
+        boolean valid = userService.verifyResetOtp(
+                request.getEmail(),
+                request.getOtp()
+        );
 
         if (!valid) {
-
             throw new RuntimeException(
                     "Invalid or expired OTP"
             );

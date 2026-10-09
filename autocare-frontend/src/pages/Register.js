@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { useNotification } from "../context/NotificationContext";
 
 function Register() {
   const navigate = useNavigate();
-
+  const { showNotification } = useNotification();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -60,7 +61,11 @@ function Register() {
 
       console.log(response.data);
 
-      alert("Account created successfully!");
+      showNotification({
+  title: "Account Created",
+  message: "Your AutoCare account has been created successfully.",
+  type: "success",
+});
 
       navigate("/login");
     } catch (error) {

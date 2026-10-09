@@ -1,5 +1,5 @@
 import { NavLink, Link, useNavigate } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../context/AuthContext";
 
 function Navbar() {
@@ -7,10 +7,33 @@ function Navbar() {
 
   const { user, logout } = useContext(AuthContext);
 
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  // ========================================
+  // CLOSE MOBILE MENU
+  // ========================================
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
+  // ========================================
+  // LOGOUT
+  // ========================================
+
   const handleLogout = () => {
+    closeMenu();
     logout();
     navigate("/login");
   };
+
+  // ========================================
+  // CHECK ADMIN
+  // ========================================
+
+  const isAdmin =
+    user &&
+    String(user.role).toUpperCase() === "ADMIN";
 
   return (
     <nav className="navbar navbar-expand-lg autocare-navbar">
@@ -23,6 +46,7 @@ function Navbar() {
         <Link
           className="navbar-brand d-flex align-items-center"
           to="/"
+          onClick={closeMenu}
         >
           <div className="brand-icon">
             <img
@@ -59,13 +83,18 @@ function Navbar() {
         <button
           className="navbar-toggler"
           type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#mainNavbar"
+          onClick={() => setMenuOpen((previous) => !previous)}
           aria-controls="mainNavbar"
-          aria-expanded="false"
+          aria-expanded={menuOpen}
           aria-label="Toggle navigation"
         >
-          <span className="navbar-toggler-icon"></span>
+          <i
+            className={
+              menuOpen
+                ? "bi bi-x-lg"
+                : "bi bi-list"
+            }
+          ></i>
         </button>
 
 
@@ -74,7 +103,9 @@ function Navbar() {
         ================================= */}
 
         <div
-          className="collapse navbar-collapse"
+          className={`collapse navbar-collapse ${
+            menuOpen ? "show" : ""
+          }`}
           id="mainNavbar"
         >
 
@@ -86,6 +117,7 @@ function Navbar() {
               <NavLink
                 to="/"
                 end
+                onClick={closeMenu}
                 className={({ isActive }) =>
                   isActive
                     ? "nav-link active"
@@ -102,6 +134,7 @@ function Navbar() {
             <li className="nav-item">
               <NavLink
                 to="/services"
+                onClick={closeMenu}
                 className={({ isActive }) =>
                   isActive
                     ? "nav-link active"
@@ -113,52 +146,90 @@ function Navbar() {
             </li>
 
 
-            {/* DASHBOARD */}
+            {/* =================================
+                CUSTOMER NAVIGATION
+            ================================= */}
 
-            <li className="nav-item">
-              <NavLink
-                to="/dashboard"
-                className={({ isActive }) =>
-                  isActive
-                    ? "nav-link active"
-                    : "nav-link"
-                }
-              >
-                Dashboard
-              </NavLink>
-            </li>
+            {user && !isAdmin && (
+              <>
 
+                {/* DASHBOARD */}
 
-            {/* MY VEHICLES */}
-
-            <li className="nav-item">
-              <NavLink
-                to="/vehicles"
-                className={({ isActive }) =>
-                  isActive
-                    ? "nav-link active"
-                    : "nav-link"
-                }
-              >
-                My Vehicles
-              </NavLink>
-            </li>
+                <li className="nav-item">
+                  <NavLink
+                    to="/dashboard"
+                    onClick={closeMenu}
+                    className={({ isActive }) =>
+                      isActive
+                        ? "nav-link active"
+                        : "nav-link"
+                    }
+                  >
+                    Dashboard
+                  </NavLink>
+                </li>
 
 
-            {/* MY BOOKINGS */}
+                {/* MY VEHICLES */}
 
-            <li className="nav-item">
-              <NavLink
-                to="/bookings"
-                className={({ isActive }) =>
-                  isActive
-                    ? "nav-link active"
-                    : "nav-link"
-                }
-              >
-                My Bookings
-              </NavLink>
-            </li>
+                <li className="nav-item">
+                  <NavLink
+                    to="/vehicles"
+                    onClick={closeMenu}
+                    className={({ isActive }) =>
+                      isActive
+                        ? "nav-link active"
+                        : "nav-link"
+                    }
+                  >
+                    My Vehicles
+                  </NavLink>
+                </li>
+
+
+                {/* MY BOOKINGS */}
+
+                <li className="nav-item">
+                  <NavLink
+                    to="/bookings"
+                    onClick={closeMenu}
+                    className={({ isActive }) =>
+                      isActive
+                        ? "nav-link active"
+                        : "nav-link"
+                    }
+                  >
+                    My Bookings
+                  </NavLink>
+                </li>
+
+              </>
+            )}
+
+
+            {/* =================================
+                ADMIN NAVIGATION
+            ================================= */}
+
+            {isAdmin && (
+
+              <li className="nav-item">
+
+                <NavLink
+                  to="/admin"
+                  onClick={closeMenu}
+                  className={({ isActive }) =>
+                    isActive
+                      ? "nav-link active"
+                      : "nav-link"
+                  }
+                >
+                  Admin Dashboard
+                </NavLink>
+
+              </li>
+
+            )}
 
           </ul>
 
@@ -170,17 +241,43 @@ function Navbar() {
           <div className="navbar-right-buttons">
 
             {user ? (
+
               <>
 
-                {/* BOOK SERVICE */}
+                {/* CUSTOMER → BOOK SERVICE */}
 
-                <NavLink
-                  to="/book-service"
-                  className="btn btn-book"
-                >
-                  Book Service
-                  <i className="bi bi-arrow-right ms-2"></i>
-                </NavLink>
+                {!isAdmin && (
+
+                  <NavLink
+                    to="/book-service"
+                    onClick={closeMenu}
+                    className="btn btn-book"
+                  >
+                    Book Service
+
+                    <i className="bi bi-arrow-right ms-2"></i>
+
+                  </NavLink>
+
+                )}
+
+
+                {/* ADMIN → ADMIN DASHBOARD */}
+
+                {isAdmin && (
+
+                  <NavLink
+                    to="/admin"
+                    onClick={closeMenu}
+                    className="btn btn-book"
+                  >
+                    Admin Dashboard
+
+                    <i className="bi bi-speedometer2 ms-2"></i>
+
+                  </NavLink>
+
+                )}
 
 
                 {/* LOGOUT */}
@@ -194,13 +291,16 @@ function Navbar() {
                 </button>
 
               </>
+
             ) : (
+
               <>
 
                 {/* LOGIN */}
 
                 <NavLink
                   to="/login"
+                  onClick={closeMenu}
                   className="btn btn-login"
                 >
                   Login
@@ -211,12 +311,14 @@ function Navbar() {
 
                 <NavLink
                   to="/register"
+                  onClick={closeMenu}
                   className="btn btn-book"
                 >
                   Register
                 </NavLink>
 
               </>
+
             )}
 
           </div>
