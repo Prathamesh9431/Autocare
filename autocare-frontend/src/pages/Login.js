@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import axios from "axios";
+import api from "../services/axiosConfig";
 import emailjs from "@emailjs/browser";
 import { AuthContext } from "../context/AuthContext";
 import { useNotification } from "../context/NotificationContext";
@@ -74,13 +74,10 @@ const { showNotification } = useNotification();
     }
 
     try {
-      const response = await axios.post(
-        "http://localhost:8081/api/users/login",
-        {
-          email: formData.email,
-          password: formData.password,
-        }
-      );
+      const response = await api.post("/api/users/login", {
+  email: formData.email,
+  password: formData.password,
+});
 
       login(response.data);
 
@@ -162,12 +159,9 @@ showNotification({
     try {
       setLoading(true);
 
-      const response = await axios.post(
-        "http://localhost:8081/api/users/forgot-password",
-        {
-          email: forgotEmail,
-        }
-      );
+      const response = await api.post("/api/users/forgot-password", {
+  email: forgotEmail,
+});
 
       const generatedOtp = response.data;
 
@@ -227,13 +221,10 @@ showNotification({
     try {
       setLoading(true);
 
-      const response = await axios.post(
-        "http://localhost:8081/api/users/verify-otp",
-        {
-          email: forgotEmail,
-          otp: otp,
-        }
-      );
+      const response = await api.post("/api/users/verify-otp", {
+  email: forgotEmail,
+  otp: otp,
+});
 
       console.log("OTP verification:", response.data);
 
@@ -289,14 +280,11 @@ showNotification({
     try {
       setLoading(true);
 
-      await axios.post(
-        "http://localhost:8081/api/users/reset-password",
-        {
-          email: forgotEmail,
-          otp: otp,
-          newPassword: newPassword,
-        }
-      );
+      await api.post("/api/users/reset-password", {
+  email: forgotEmail,
+  otp: otp,
+  newPassword: newPassword,
+});
 
       setForgotMessage(
         "Password reset successfully! You can now login."

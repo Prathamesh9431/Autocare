@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import axios from "axios";
+import api from "../services/axiosConfig";
 import { useNotification } from "../context/NotificationContext";
 
 function Register() {
@@ -49,15 +49,15 @@ function Register() {
     }
 
     try {
-      const response = await axios.post(
-        "http://localhost:8081/api/users/register",
-        {
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-          password: formData.password,
-        }
-      );
+      const response = await api.post(
+  "/api/users/register",
+  {
+    name: formData.name,
+    email: formData.email,
+    phone: formData.phone,
+    password: formData.password,
+  }
+);
 
       console.log(response.data);
 
