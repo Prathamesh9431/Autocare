@@ -18,7 +18,6 @@ import com.autocare.service.VehicleService;
 
 @RestController
 @RequestMapping("/api/vehicles")
-@CrossOrigin(origins = "http://localhost:3000")
 public class VehicleController {
 
     private final VehicleService vehicleService;

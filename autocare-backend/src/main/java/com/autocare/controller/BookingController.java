@@ -21,7 +21,6 @@ import com.autocare.service.BookingService;
 
 @RestController
 @RequestMapping("/api/bookings")
-@CrossOrigin(origins = "http://localhost:3000")
 public class BookingController {
 
     private final BookingService bookingService;
