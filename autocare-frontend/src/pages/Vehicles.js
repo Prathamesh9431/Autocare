@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect, useContext, useCallback } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
+import api from "../services/axiosConfig";
 import { AuthContext } from "../context/AuthContext";
 import { useNotification } from "../context/NotificationContext";
 
@@ -51,8 +51,8 @@ function Vehicles({ vehicles, setVehicles }) {
     }
 
     try {
-      const response = await axios.get(
-        `http://localhost:8081/api/vehicles/user/${user.id}`
+      const response = await api.get(
+        `/api/vehicles/user/${user.id}`
       );
 
       setVehicles(response.data);
@@ -133,8 +133,8 @@ function Vehicles({ vehicles, setVehicles }) {
       // ====================================
 
       if (isEditing) {
-        await axios.put(
-          `http://localhost:8081/api/vehicles/${editingVehicleId}?userId=${user.id}`,
+        await api.put(
+          `/api/vehicles/${editingVehicleId}?userId=${user.id}`,
           vehicleData
         );
 
@@ -150,8 +150,8 @@ function Vehicles({ vehicles, setVehicles }) {
       // ====================================
 
       else {
-        await axios.post(
-          "http://localhost:8081/api/vehicles",
+        await api.post(
+          "/api/vehicles",
           vehicleData
         );
 
@@ -218,8 +218,8 @@ function Vehicles({ vehicles, setVehicles }) {
     }
 
     try {
-      await axios.delete(
-        `http://localhost:8081/api/vehicles/${id}?userId=${user.id}`
+      await api.delete(
+        `/api/vehicles/${id}?userId=${user.id}`
       );
 
       await loadVehicles();

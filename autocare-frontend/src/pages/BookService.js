@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../App.css";
-import axios from "axios";
+import api from "../services/axiosConfig";
 import { AuthContext } from "../context/AuthContext";
 
 function BookService({
@@ -57,8 +57,8 @@ function BookService({
       }
 
       try {
-        const response = await axios.get(
-          `http://localhost:8081/api/vehicles/user/${user.id}`
+        const response = await api.get(
+          `/api/vehicles/user/${user.id}`
         );
 
         setVehicles(response.data);
@@ -241,8 +241,8 @@ function BookService({
     // ========================================
 
     try {
-      const response = await axios.post(
-        "http://localhost:8081/api/bookings",
+      const response = await api.post(
+        "/api/bookings",
         bookingData
       );
 
